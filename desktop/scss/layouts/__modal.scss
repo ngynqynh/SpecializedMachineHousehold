@@ -1,0 +1,138 @@
+// modal-refund
+.modal-refund {
+    .c-modal__wrapper {
+        width: 776px;
+    }
+    .card-body {
+        padding: 16px 24px;
+        &__text {
+            margin-bottom: 8px;
+        }
+        &__module {
+            .card {
+                border: 1px solid #E1E4E6;
+                box-shadow: inset 0px 1px 0px #edeeef;
+                border-top: none;
+                min-height: auto;
+                margin-bottom: 0;
+                &-title {
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #32373D;
+                    box-shadow: none;
+                    padding: 16px 20px;
+                }
+                &-body {
+                    padding: 0;
+                }
+                .c-question-item {
+                    padding: 16px 20px;
+                    .head {
+                        div {
+                            font-size: 18px;
+                            line-height: 24px;
+                            color: #32373D;
+                        }
+                        span {
+                            font-size: 20px;
+                            color: #CBD1D6;
+                        }
+                    }
+                    .body {
+                        padding-right: 74px;
+                        p {
+                            margin-bottom: 0 !important;
+                        }
+                        li {
+                            display: -webkit-inline-box;
+                            display: -ms-inline-flexbox;
+                            display: inline-flex;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: flex-start;
+                            p {
+                                flex: 1;
+                            }
+                        }
+                        .dots {
+                            width: 4px;
+                            height: 4px;
+                            background: #444B52;
+                            margin: 10px 12px 0 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.para {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #444B52;
+    margin-bottom: 16px;
+    &-title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 32px;
+        color: #32373D;
+        margin-bottom: 16px;
+    }
+    &-link {
+        margin: 16px 0 0;
+        a {
+            text-decoration: underline;
+            &:hover,
+            &:focus,
+            &:active {
+                color: $link-500;
+                outline: none;
+            }
+        }
+    }
+}
+
+// modal-installment
+.modal-installment {
+    .c-modal__wrapper {
+        width: 776px;
+    }
+    .card {
+        &-title {
+            font-size: 28px;
+            line-height: 36px;
+            color: $grayscale-800;
+        }
+        &-body {
+            padding: 16px 24px;
+            &__text {
+                margin-top: 4px;
+            }
+            .st-list {
+                padding: 0;
+                li {
+                    width: 100%;
+                    align-items: flex-start;
+                    p {
+                        flex: 1;
+                    }
+                }
+                .dots {
+                    width: 6px;
+                    height: 6px;
+                    margin: 8px 12px 0 4px;
+                    color: $grayscale-500;
+                }
+                strong {
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+}

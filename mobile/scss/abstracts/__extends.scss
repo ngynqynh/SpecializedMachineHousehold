@@ -1,0 +1,41 @@
+.typo {
+	&-headline {
+		@include textType(24px, 32px);
+	}
+	&-eyebrow {
+      @include textType(20px, 28px);
+	}
+	&-title {
+      @include textType(16px, 24px);
+      &--lg{
+         @include textType(24px, 32px);
+      }
+      &--md{
+         @include textType(20px, 20px);
+      }
+      &--sm{
+         @include textType(15px, 20px);
+      }
+	} 
+	&-into-elevated {
+      @include textType(18px, 24px);
+	}
+   &-text{ 
+      @include textType(14px, 20px);
+      &--lg{
+         @include textType(16px, 24px);
+      }
+      &--md{
+         @include textType(15px, 20px);
+      }
+      &--sm{
+         @include textType(12px, 16px);
+      }
+      &--xs{
+         @include textType(14px, 14px);
+      }
+      &--xxs{
+         @include textType(13px, 13px);
+      }
+   }
+}

@@ -1,0 +1,123 @@
+$avatar-size: (
+	lg: 72px,
+	md: 48px,
+	sm: 28px,
+);
+@each $size, $value in $avatar-size {
+	.avatar-#{$size} {
+		.avatar-shape {
+			width: $value;
+			height: $value;
+		}
+	}
+}
+.avatar {
+	$this: '.avatar';
+	display: flex;
+	align-items: center;
+	&-shape {
+		@include flexCenter(inline-flex);
+		border-radius: $border-radius-md;
+		overflow: hidden;
+	}
+	&-info {
+		margin-left: $spacing-base * 2;
+	}
+	&-name {
+		color: $grayscale-900;
+	}
+	&-time {
+		color: $grayscale;
+	}
+	// modified
+	&-logo {
+		#{$this}-shape {
+			background: #252525;
+			img {
+				width: 90%;
+			}
+		}
+	}
+	&-text {
+		#{$this}-shape {
+			background: $grayscale-400;
+			color: $white;
+		}
+	}
+	&-circle {
+		#{$this}-shape {
+			border-radius: 50%;
+		}
+	}
+	&-badge {
+		#{$this}-name {
+			display: flex;
+			align-items: center;
+		}
+		.badge {
+			align-self: baseline;
+		}
+	}
+	&-stack {
+		display: inline-flex;
+		.avatar {
+			transition: all 0.3s ease;
+			@for $i from 1 through 7 {
+				&:nth-last-child(n + #{$i}) {
+					z-index: $i;
+				}
+			}
+
+			&:hover {
+				transform: translateY(-10%);
+				z-index: 10;
+			}
+			&-shape {
+				box-sizing: border-box;
+			}
+			&-lg {
+				.avatar-shape {
+					border: 3px solid $white;
+				}
+				&:not(:first-child) {
+					margin-left: -18px;
+				}
+			}
+			&-md {
+				.avatar-shape {
+					border: 2px solid $white;
+				}
+				&:not(:first-child) {
+					margin-left: -14px;
+				}
+			}
+			&-sm {
+				.avatar-shape {
+					border: 1px solid $white;
+				}
+				&:not(:first-child) {
+					margin-left: -6px;
+				}
+			}
+		}
+		&-number {
+			.avatar {
+				&-lg {
+					&:last-child {
+						margin-left: -10px;
+					}
+				}
+				&-md {
+					&:last-child {
+						margin-left: -6px;
+					}
+				}
+				&-sm {
+					&:last-child {
+						margin-left: -4px;
+					}
+				}
+			}
+		}
+	}
+}

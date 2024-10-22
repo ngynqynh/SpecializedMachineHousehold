@@ -1,0 +1,148 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: 500;
+  color: $headings-color;
+}
+
+h1,
+.h1 {
+  @include textType(36px, 48px);
+  @include respond(md) {
+    @include textType(28px, 36px);
+  }
+}
+h2,
+.h2 {
+  @include textType(32px, 40px);
+  @include respond(md) {
+    @include textType(24px, 32px);
+  }
+}
+h3,
+.h3 {
+  @include textType(28px, 36px);
+  @include respond(md) {
+    @include textType(20px, 28px);
+  }
+}
+h4,
+.h4 {
+  @include textType(24px, 32px);
+  @include respond(md) {
+    @include textType(18px, 24px);
+  }
+}
+h5,
+.h5 {
+  @include textType(20px, 28px);
+  @include respond(md) {
+    @include textType(18px, 24px);
+  }
+}
+h6,
+.h6 {
+  @include textType(18px, 24px);
+  @include respond(md) {
+    @include textType(16px, 24px);
+  }
+}
+
+p {
+  color: $paragraph-color;
+  @include textType(18px, 24px, 400);
+  @include respond(md) {
+    @include textType(16px, 24px);
+  }
+}
+.text {
+  @include textType(14px, 20px);
+  @include typography(text);
+  a {
+    color: inherit;
+  }
+  &--title{
+    font-weight: 500;
+  } 
+  &--heading{
+    @include typography(heading, true); 
+  }
+}
+.heading {
+  @include typography(heading, true); 
+}
+.paragraph {
+  @include typography(paragraph);
+}
+strong {
+  font-weight: 500;
+}
+// font weight
+$fws: 300, 400, 500, 600, 700;
+
+@mixin font-weight($className, $styleName) {
+  @each $fw in $fws {
+    #{$className + $fw} {
+      #{$styleName}: #{$fw};
+    }
+  }
+}
+@include font-weight(".f-w-", "font-weight");
+
+// font size
+$fsPosts: (
+  "12": "16",
+  "13": "18",
+  "14": "20",
+  "15": "20",
+  "16": "24",
+  "18": "24",
+  "20": "28",
+  "24": "32",
+  "28": "36",
+  "32": "40",
+  "36": "48",
+  "44": "60",
+);
+$fsUIs: (
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "18",
+  "20",
+  "24",
+  "28",
+  "32",
+  "36",
+  "44"
+);
+@each $fs, $lh in $fsPosts {
+  .f-s-p-#{$fs} {
+    font-size: #{$fs + "px"};
+    line-height: #{$lh + "px"};
+  }
+}
+@each $fsUI in $fsUIs {
+  .f-s-ui-#{$fsUI} {
+    font-size: #{$fsUI + "px"};
+    line-height: #{$fsUI + "px"};
+  }
+}
+.font-inherit * {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+code {
+  font-size: 100%;
+  color: $primary;
+  word-break: break-word;
+  transform: translateY(-1px);
+}

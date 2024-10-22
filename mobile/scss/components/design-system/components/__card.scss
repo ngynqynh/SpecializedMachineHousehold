@@ -1,0 +1,13 @@
+.card {
+  display: block;
+  border-radius: $border-radius;
+  box-shadow: $shadow-drop-200;
+  background: $white;
+  overflow: hidden;
+  &-md {
+    border-radius: $border-radius-md;
+  }
+  &-lg {
+    border-radius: $border-radius-lg;
+  }
+}

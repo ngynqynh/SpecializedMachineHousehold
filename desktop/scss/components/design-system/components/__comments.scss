@@ -1,0 +1,123 @@
+.comment {
+   &-rating {
+      padding: 16px 0;
+      box-shadow: $box-shadow-100;
+      .list-star {
+         li {
+            line-height: 24px;
+            font-size: 21px;
+         }
+      }
+      &__submit {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 100%;
+      }
+      & + .comment-feedbacks {
+         padding-top: 20px;
+      }
+   } 
+   &-progress {
+      &__line {
+         display: flex;
+         align-items: center;
+         @include textType(14px, 20px);
+         &:not(:last-child) {
+            margin-bottom: 4px;
+         }
+      }
+      .progress {
+         height: 8px;
+         flex: 1;
+      }
+   }
+   &-feedbacks {
+      padding: 0 20px 24px;
+   }
+   &-item {
+      &:not(:first-child) {
+         margin-top: 20px;
+      }
+      // custom
+      .avatar {
+         align-items: initial;
+         &-shape {
+            width: 76px;
+            height: 76px;
+            margin-right: 16px;
+         }
+         &-info {
+            flex: 1;
+            margin-left: 0;
+         }
+         &-time {
+            display: flex;
+         }
+         .list-star {
+            display: inline-flex;
+            li {
+               display: inline-flex;
+               align-items: center;
+            }
+         }
+      }
+      &.reply {
+         padding-left: 92px;
+         .avatar {
+            padding-left: 16px;
+            box-shadow: inset 4px 0px 0px $grayscale-400;
+         }
+      }
+      // custom
+      .link.active {
+         font-weight: 500;
+         &:before {
+            background: $success;
+         }
+         &,
+         .ic-color-link {
+            color: $success;
+         }
+         &:hover,
+         &:focus {
+            color: $success;
+         }
+      }
+   }
+   &-form {
+      padding: 16px 20px 20px;
+      .form-group {
+         textarea {
+            height: 68px;
+         }
+         .btn {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+         }
+      }
+   }
+   &-modal {
+      .list-star {
+         li {
+            span {
+               font-size: 24px;
+            }
+         }
+      }
+   }
+}
+.list-star {
+   display: flex;
+   li {
+      @include textType(14px, 20px);
+      &:not(:first-child) {
+         margin-left: 4px;
+      }
+      span {
+      }
+   }
+}

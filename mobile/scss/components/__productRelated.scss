@@ -1,0 +1,29 @@
+.product__related {
+    background-color: $white;
+
+    .news__card {
+        padding: 8px 0;
+    }
+
+    &-slide {
+        position: relative;
+        margin-top: 8px;
+    }
+
+    &-title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: $grayscale-800;
+    }
+
+    &-button {
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .swiper-slide {
+        max-width: 152px;
+        min-width: 152px;
+    }
+}

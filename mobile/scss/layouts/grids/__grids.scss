@@ -1,0 +1,14 @@
+.g-container {
+	width: 100%;
+	position: relative;
+	padding: 0 10px;
+	&:after {
+		clear: both;
+	}
+	&:after,
+	&:before {
+		content: '';
+		display: table;
+	}
+}
+ 

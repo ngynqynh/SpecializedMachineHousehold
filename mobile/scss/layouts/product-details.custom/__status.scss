@@ -1,0 +1,55 @@
+.st-stt {
+	padding: 16px 8px 0;
+	margin-bottom: 0;
+	.st-pd-normal {
+		justify-content: center;
+		.hotline {
+			text-align: center;
+			margin-bottom: 0;
+		}
+	}
+	.st-pd-btn {
+		.btn-full {
+			margin-bottom: 0;
+			padding: 17px 32px;
+		}
+	}
+	.st-oldProduct {
+		margin-bottom: 16px;
+	}
+	// end custom
+	&__noti {
+		padding: 8px;
+		border-radius: 4px;
+		border: solid 1px $gray-200;
+		background: $gray-100;
+		margin-bottom: 16px;
+		display: flex;
+		align-items: center;
+		span {
+			color: #939ca3;
+			font-size: 22px;
+		}
+		p {
+			@extend .typo-title;
+			margin-left: 8px;
+			margin-bottom: 0;
+		}
+	}
+	.btn-dht {
+		.btn {
+			padding: 8px;
+			strong {
+				font-weight: 500;
+			}
+		}
+	}
+	.btn-dchv {
+		.btn {
+			padding: 10px 8px;
+			strong {
+				font-weight: 500;
+			}
+		}
+	}
+}

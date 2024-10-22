@@ -1,0 +1,104 @@
+.c-progress {
+	&-item {
+		margin-bottom: 4px;
+		// text-align: center;
+		padding-left: 86px;
+		span {
+			font-size: 14px;
+			line-height: 20px;
+			color: $gray;
+		}
+		label {
+			@include textType(15px, 1.33);
+			i {
+				display: inline-block;
+				margin-left: 2px;
+			}
+		}
+	}
+	&-bar {
+		background-color: $gray-200;
+		border-radius: 19.6px;
+		width: 280px;
+		height: 10px;
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+		margin: 0 4px 0 5px;
+	}
+	&-value {
+		background-color: $success-500;
+		transition: 0.3s all linear;
+		height: 100%;
+		position: absolute;
+		left: 100%;
+		top: 0;
+		display: inline-block;
+		animation: progress 3s ease-in-out forwards;
+		-webkit-animation: progress 3s ease-in-out forwards;
+		&.gray {
+			background-color: $grayscale-500;
+		}
+	}
+}
+.c-circular {
+	$d: 52;
+	.percent {
+		position: relative;
+		width: #{$d}px;
+		height: #{$d}px;
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			top: 50%;
+			left: 50%;
+			width: calc(100%);
+			height: calc(100%);
+			border: 1px solid #cbd1d6;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+		}
+		svg {
+			position: relative;
+			z-index: 2;
+			width: #{$d}px;
+			height: #{$d}px;
+			// background: tomato;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform-origin: center;
+			transform: rotate(-90deg);
+			circle {
+				fill: none;
+				stroke-width: 3;
+				stroke-dasharray: 149;
+				stroke-linecap: round;
+				stroke: $grayscale-700;
+			}
+		}
+		.number {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: calc(100% - 8px);
+			height: calc(100% - 8px);
+			background: $primary;
+			color: $white;
+			border: 1px solid #cbd1d6;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			div {
+				@include textType(20px, 20px, 500);
+			}
+			span {
+				@include textType(12px, 12px);
+			}
+		}
+	}
+}

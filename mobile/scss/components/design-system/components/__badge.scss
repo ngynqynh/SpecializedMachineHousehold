@@ -1,0 +1,192 @@
+$badge-close-size: (
+  "xl": (
+    margin-icon: "16px",
+    font-size: "28px",
+  ),
+  "lg": (
+    margin-icon: "12px",
+    font-size: "20px",
+  ),
+  "md": (
+    margin-icon: "8px",
+    font-size: "16px",
+  ),
+  "sm": (
+    margin-icon: "8px",
+    font-size: "16px",
+  ),
+  "xs": (
+    margin-icon: "4px",
+    font-size: "14px",
+  ),
+  "xxs": (
+    margin-icon: "4px",
+    font-size: "12px",
+  ),
+);
+.badge {
+  display: inline-flex;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+  transition: all $transition-duration-xs $timing-ease-end;
+  &,
+  div,
+  span {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  span:not(.btn) {
+    display: inline-block;
+  }
+  .ic-close {
+    cursor: pointer;
+  }
+  &-md {
+    padding: $spacing-base * 2 - 1 $spacing-base * 3;
+    &,
+    div,
+    span {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+  &-xs {
+    padding: $spacing-base $spacing-base * 2;
+    &,
+    div,
+    span {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+  &-xxs {
+    padding: $spacing-base - 1 $spacing-base * 2;
+    &,
+    div,
+    span {
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+  &:empty {
+    display: none;
+  }
+
+  &-rounded {
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  // colors
+  &-grayscale {
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+// Colors
+
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    color: $white;
+    background: $value;
+  }
+}
+@each $color, $value in $theme-colors {
+  .badge-outline-#{$color} {
+    color: #{$value};
+    border: 1px solid #{$value};
+    &:hover {
+      color: $white;
+      background: #{$value};
+      border: 1px solid #{$value};
+    }
+  }
+}
+// custom
+.badge-grayscale {
+  background: $grayscale-200;
+}
+.badge-outline-grayscale {
+  border: 1px solid #{$grayscale-400};
+  &:hover {
+    .ic-close {
+      color: $white;
+    }
+  }
+}
+.badge-outline-grayscale,
+.badge-grayscale {
+  color: $grayscale-600;
+}
+
+// badge hover
+@each $color, $value in $theme-colors-hover {
+  .badge-#{$color} {
+    &:hover {
+      background: $value;
+    }
+  }
+}
+
+// badge button close
+@mixin badge-close($bool: false) {
+  @if $bool {
+    @each $size, $detail in $badge-close-size {
+      $margin-icon: map-get($detail, "margin-icon");
+      $font-size: map-get($detail, "font-size");
+      &.badge-#{$size} {
+        .btn {
+          margin-left: #{$margin-icon};
+        }
+      }
+    }
+  }
+}
+@each $color, $value in $theme-colors-hover {
+  .badge-#{$color}.badge-close {
+    .btn {
+      background: #{$value};
+      margin-right: -1px;
+    }
+  }
+}
+
+.badge-close {
+  padding: 0;
+  align-items: center;
+  overflow: hidden;
+  border: none;
+  @include badge-close(true);
+  &.badge-md {
+    padding-left: $spacing-base * 3;
+  }
+  &.badge-xs {
+    padding-left: $spacing-base * 2;
+  }
+  &.badge-xxs {
+    padding-left: $spacing-base * 2;
+  }
+}
+// custom only grayscale
+.badge-grayscale.badge-close {
+  .btn-grayscale {
+    background: $grayscale-300;
+    color: $grayscale-600;
+    &:hover {
+      background: $grayscale-400;
+      border-color: $grayscale-400;
+    }
+    &:focus,
+    &:active {
+      color: $white;
+      background: $grayscale-500;
+      border-color: $grayscale-500;
+    }
+  }
+}

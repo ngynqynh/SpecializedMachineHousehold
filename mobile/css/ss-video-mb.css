@@ -1,0 +1,122 @@
+.st-pd__slider .swiper-slide .video {
+   overflow: hidden;
+   position: relative;
+   width: 100%;
+   height: 0;
+   padding-top: calc((0.56241 * 100%) + 0px);
+}
+.st-pd__slider .swiper-slide .video > :first-child {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   background: #f4f4f4;
+}
+.st-pd__slider .swiper-slide .video iframe {
+   object-fit: cover;
+}
+.c-popup--video .modal__body {
+   padding: 40px 8px 16px;
+}
+.c-popup--video .modal__body .iframe {
+   overflow: hidden;
+   position: relative;
+   width: 100%;
+   height: 0;
+   padding-top: calc((0.7 * 100%) + 0px);
+   margin-bottom: 8px;
+}
+.c-popup--video .modal__body .iframe > :first-child {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   background: #f4f4f4;
+}
+.c-popup--video .modal__body .name {
+   font-size: 16px;
+   line-height: 24px;
+   font-weight: 500;
+   color: #32373d;
+   margin-bottom: 4px;
+}
+.c-popup--video .modal__body .sub {
+   font-size: 14px;
+   line-height: 20px;
+   color: #939ca3;
+}
+
+.c-popup--video .modal__content .modal__close-btn {
+   width: 16px;
+   height: 16px;
+}
+.c-popup--video .modal__content .modal__close-btn:before,
+.c-popup--video .modal__content .modal__close-btn:after {
+   width: 16px;
+}
+.c-news--video .c-new {
+   flex: 1;
+}
+.c-news--video .c-new .c-new__img {
+   position: relative;
+}
+.c-news--video .c-new .c-new__img img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.c-news--video .c-new .c-new__img:before {
+   content: "\e9b9";
+   font-family: "icon";
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+   font-size: 18px;
+   color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.l-pd-rate .card-title {
+   padding-right: 10px;
+}
+.l-pd-rate .c-dropdown {
+   position: relative;
+   z-index: 1;
+   top: 0;
+   right: 0;
+   margin-right: 0;
+   margin-left: 8px;
+}
+.l-pd-rate .c-dropdown-button {
+   padding: 0px 25px 0 8px;
+   background: none;
+   font-size: 14px;
+   position: relative;
+   min-width: unset;
+   height: auto;
+   white-space: nowrap;
+}
+.l-pd-rate .c-dropdown-button span {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 12px;
+   right: 8px;
+}
+.l-pd-rate .c-dropdown-menu a {
+   padding: 8px 10px;
+   font-size: 14px;
+   line-height: 20px;
+   margin-bottom: 0;
+}

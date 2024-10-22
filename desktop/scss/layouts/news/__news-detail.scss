@@ -1,0 +1,33 @@
+.news__detail {
+    padding-bottom: 32px;
+    margin-bottom: 24px;
+    background-color: #FFF;
+    .breadcrumb {
+        margin: 6px 0;
+    }
+}
+
+.product {
+
+    &__price {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__progress {
+        max-width: 109px;
+    }
+}
+
+
+a {
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        text-decoration: none;
+        color: #0664F9;
+        position: relative;
+    }
+}

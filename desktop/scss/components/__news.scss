@@ -1,0 +1,91 @@
+.c-new {
+  $this: &;
+  margin-bottom: 16px;
+  &s {
+    &--column {
+      display: flex;
+      #{$this} {
+        width: calc((100% - 60px) / 4);
+        margin-right: 20px;
+      }
+    }
+    &--row {
+      #{$this} {
+        display: flex;
+        margin-bottom: 6px;
+      }
+      #{$this}__img {
+        width: 105px;
+        height: 70px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        margin-bottom: 0;
+        border-radius: 4px;
+        border: solid 0 #e9ecef;
+        overflow: hidden;
+      }
+      #{$this}__info {
+        flex: 1;
+      }
+      .e-tag {
+        // margin-bottom: 0;
+      }
+    }
+    &--video {
+      #{$this} {
+        flex: 1;
+        #{$this}__img {
+          @include aspect-ratio(266, 176, 0);
+          img {
+            object-fit: cover;
+          }
+          &:before {
+            // content: "\e9b9";
+            content: "\e817";
+            font-family: "icon";
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              0deg,
+              rgba(0, 0, 0, 0.5),
+              rgba(0, 0, 0, 0.5)
+            );
+            font-size: 48px;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        &:nth-child(4n + 4) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__img {
+    margin-bottom: 8px;
+    width: 275px;
+    height: 183px;
+    border-radius: 4px;
+    overflow: hidden;
+    @include flexCenter();
+  }
+  &__name {
+    @extend .typo-title--small;
+    @extend .re-link--normal;
+    font-weight: normal;
+    @include setLine(3);
+    margin-bottom: 8px;
+    color: $grayscale-700;
+  }
+  &__text {
+    @include textType(14px, 20px);
+    color: $grayscale-500;
+  }
+}

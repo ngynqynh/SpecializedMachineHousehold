@@ -1,0 +1,121 @@
+.c-rate-star {
+	padding: 0 8px 8px;
+	.c-rate {
+		&__left {
+			// padding-left: 12px;
+			p {
+				@include textType(16px, 24px);
+				color: $gray-700;
+				margin-bottom: 4px;
+			}
+			.point {
+				@include textType(44px, 60px);
+				color: $red-500;
+				font-weight: 500;
+				margin-bottom: 4px;
+			}
+			span {
+				display: inline-block;
+				@include textType(14px, 20px);
+				color: $gray-500;
+			}
+		}
+		&__center {
+			padding-left: 10px;
+		}
+		&__right {
+			padding-top: 11px;
+			p {
+				font-weight: 300;
+				margin-bottom: 8px;
+			}
+			.btn {
+				padding: 10px 16px;
+				width: 100%;
+				&:hover,
+				&:focus,
+				&:active {
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.ye-star {
+	font-size: 16px !important;
+	line-height: 1;
+	color: $warning;
+	&:before {
+		margin: 0;
+		font-size: 100%;
+	}
+	&.non-star {
+		color: $gray;
+	}
+	&.small {
+		font-size: 13px !important;
+	}
+	&.large {
+		font-size: 26px !important;
+	}
+}
+
+.c-user-rate {
+	padding: 8px 10px;
+	background: $gray-100;
+	&-star {
+		p {
+			@extend .typo-text--lg;
+			font-weight: 500;
+			margin-bottom: 5px;
+		}
+	}
+	.list-star {
+		margin-bottom: 12px;
+		ul {
+			li {
+				&:not(:last-child) {
+					margin-right: 8px;
+				}
+			}
+		}
+	}
+	& &-form {
+		margin-bottom: 8px;
+	}
+	&-form {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		textarea {
+			width: 100%;
+			height: 80px;
+			border-radius: 4px;
+			border: solid 1px $gray-400;
+			background-color: #ffffff;
+			padding: 6px 10px;
+			outline: none;
+			@include textType(14px, 20px);
+			margin-bottom: 8px;
+			&::placeholder {
+				font-size: 14px;
+				color: $text-sub;
+			}
+		}
+		.btn {
+			padding: 5px 10px;
+		}
+		div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			@extend .typo-text;
+			color: #99a2aa;
+		}
+	}
+}
+
+.c-user-comment {
+	position: relative;
+}

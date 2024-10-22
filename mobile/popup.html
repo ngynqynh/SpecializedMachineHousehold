@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>FPTShop</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="images/favicon.ico" />
+    <!-- Css -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/header.footer.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <!-- <link rel="stylesheet" href="css/system.css" /> -->
+    <link rel="stylesheet" href="css/icon-fptshop.css" />
+    <link rel="stylesheet" href="css/lightslider.min.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/nouislider.min.css" />
+    <link rel="stylesheet" href="css/lightgallery.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- jsLib -->
+    <script src="js/libs/jquery-3.2.0.min.js"></script>
+    <script src="js/libs/swiper.min.js"></script>
+    <script src="js/libs/nouislider.min.js"></script>
+    <script src="js/libs/wNumb.js"></script>
+    <script src="js/libs/lightgallery-all.min.js"></script>
+    <script src="js/libs/lightslider.min.js"></script>
+    <script src="js/libs/spritespin.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/modal.js"></script>
+</head>
+
+<body>
+    <!-- popup find shop -->
+    <div class="modal modal-find-fshop js-modal c-fs js--popup-dropdown" id="js--find-shop" data-animation="on">
+        <div class="c-modal__wrapper">
+            <div class="c-modal__box">
+                <div class="card card-normal">
+                    <div class="card-title"> Tìm shop có hàng gần nhất <button
+                            class="c-modal--close js-modal__close"></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="c-fs__block">
+                            <div class="title">Chọn địa điểm</div>
+                            <div class="c-fs__dropdown">
+                                <div class="c-dropdown c-dropdown--col c-dropdown--popup">
+                                    <div class="c-dropdown-button c-dropdown-button--lg"> Hồ Chí Minh <span
+                                            class="icon-arrow-combo"></span>
+                                    </div>
+                                    <div class="c-dropdown-menu">
+                                        <div class="c-dropdown-menu__top">
+                                            <div class="c-dropdown-menu__search">
+                                                <div class="st-search-input">
+                                                    <div class="cs-input-group">
+                                                        <input type="text" placeholder="Nhập tìm ngân hàng"
+                                                            class="cs-input cs-input--lg js--search-mobile__input" />
+                                                        <span
+                                                            class="icon-cancel st-search__clear js--search-mobile__clear"></span>
+                                                        <span class="icon-search"></span>
+                                                    </div>
+                                                    <a href="#" class="st-search__close re-blue">Huỷ bỏ</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="c-dropdown-menu__wrapper">
+                                            <a href="#" class="active">Hà Nội</a>
+                                            <a href="#">Hồ Chí Minh</a>
+                                            <a href="#">Đồng Tháp</a>
+                                            <a href="#">Đồng nai</a>
+                                            <a href="#">Thái Nguyên</a>
+                                            <a href="#">Gia Lai</a>
+                                            <a href="#">Nha Trang</a>
+                                            <a href="#">Quãng Ngãi</a>
+                                            <a href="#">An Giang</a>
+                                            <a href="#">Cà Mau</a>
+                                            <a href="#">Đà Nẵng</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-dropdown">
+                                    <div class="c-dropdown-button active"> Dropdown 2 <span
+                                            class="icon-arrow-combo"></span>
+                                    </div>
+                                    <div class="c-dropdown-menu" style="display: block">
+                                        <div class="c-dropdown-menu__wrapper">
+                                            <a href="#" class="active">Dropdown 2 1</a>
+                                            <a href="#">Dropdown 2 2</a>
+                                            <a href="#">Dropdown 2 3</a>
+                                            <a href="#">Dropdown 2 4</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-fs__block--checkbox checkbox">
+                            <label for="checkbox-filter">
+                                <input type="checkbox" id="checkbox-filter" class="form-checkbox">
+                                <span class="form-label-text"> Chỉ hiển thị Trung tâm Laptop</span>
+                            </label>
+                        </div>
+                        <div class="c-fs__block--location">
+                            <div class="c-fs__location">
+                                <ul>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca1" />
+                                            <label for="loca1">192A Nguyễn Thị Định, P. An Phú , Quận 2, Hồ Chí
+                                                Minh</label>
+                                            <span class="success">
+                                                Có hàng </span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca2" />
+                                            <label for="loca2">358 Nguyễn Duy Trinh, P. Bình Trưng Tây , Quận 2, Hồ Chí
+                                                Minh</label>
+                                            <span class="warning">
+                                                Tạm hết hàng- Đặt hàng lấy sau 2-7 ngày</span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca3" />
+                                            <label for="loca3">141 Trần Não, Khu Phố 3, P. Bình An , Quận 2, Hồ Chí
+                                                Minh</label>
+                                            <span class="success">
+                                                Có hàng</span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca4" />
+                                            <label for="loca4">137 Tô Ngọc Vân, Khu Phố 4, P. Linh Tây , Quận Thủ Đức,
+                                            </label>
+                                            <span class="success">
+                                                Có hàng</span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca5" />
+                                            <label for="loca5">190 Nguyễn Thị Thập, P. Bình Thuận , Quận 7, Hồ Chí
+                                                Minh</label>
+                                            <span class="success">
+                                                Có hàng</span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="c-fs__viewmore">
+                                    <a href="#" class="re-link js--open-modal">Xem thêm (8 shop) <span
+                                            class="icon-down-dir"></span></a>
+                                </div>
+                            </div>
+                            <div class="c-fs__location">
+                                <ul>
+                                    <li>
+                                        <div class="location-loading">
+                                            <div class="location-loading__radio loads"></div>
+                                            <div class="location-loading__block">
+                                                <div class="location-loading__line loads" style="width: 100%"></div>
+                                                <div class="location-loading__line loads" style="width: 40%"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="location-loading">
+                                            <div class="location-loading__radio loads"></div>
+                                            <div class="location-loading__block">
+                                                <div class="location-loading__line loads" style="width: 100%"></div>
+                                                <div class="location-loading__line loads" style="width: 40%"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="location-loading">
+                                            <div class="location-loading__radio loads"></div>
+                                            <div class="location-loading__block">
+                                                <div class="location-loading__line loads" style="width: 100%"></div>
+                                                <div class="location-loading__line loads" style="width: 40%"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="c-fs__submit">
+                            <button class="btn btn-xl btn-primary">ĐẶT GIỮ HÀNG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popup-mini -->
+    <div class="modal c-modal modal-mini c-fs" id="js--mini" data-animation="on">
+        <div class="c-modal__wrapper mini-size">
+            <div class="c-modal__box mini-box">
+                <div class="card mini-height">
+                    <div class="card-title mini-title">
+                        Giao hàng về hãng
+                        <img class="mini-logo" src="./images/logo-kalite-mb.png" alt="">
+                        <button class="c-modal--close js-close-mini"></button>
+                    </div>
+                    <div class="mini-content">
+                        <div class="mini-wraper">
+                            <ul class="mini-style">
+                                <li>Thương hiệu Việt Nam, thành lập năm 2019.
+                                    Các dòng sản phẩm của Kalite luôn rất được lòng khách hàng vì thiết kế sang trọng,
+                                    tinh tế, hiện đại, không ngừng cải tiến và nâng cao chất lượng bằng việc ứng dụng
+                                    công nghệ mới như máy ép chậm, nồi chiên không dầu...</li>
+                                <li>Các sản phẩm của Kalite được sản xuất tại Thái Lan, Trung Quốc,
+                                    Việt Nam,... với chất lượng tuyệt hảo. Với mong muốn nâng cao sức khoẻ và chất lượng
+                                    cuộc sống, hỗ trợ bạn chế biến những bữa ăn lành mạnh, tốt cho sức khoẻ cả gia
+                                    đình.<a class="link" href="">Tìm hiểu
+                                        thêm</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JsCall -->
+    <script src="js/functions.js"></script>
+</body>
+
+</html>

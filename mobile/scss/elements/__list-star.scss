@@ -1,0 +1,18 @@
+.list-star {
+	margin-bottom: 4px;
+	ul {
+		display: inline-flex;
+		li {
+			line-height: 1;
+			&:not(:last-child) {
+				margin-right: 4px;
+			}
+		}
+		& + span {
+			@include textType(16px, 24px, normal);
+			vertical-align: text-bottom;
+			display: inline-block;
+			margin-left: 4px;
+		}
+	}
+}

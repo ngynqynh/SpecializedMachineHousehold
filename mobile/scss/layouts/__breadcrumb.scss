@@ -1,0 +1,19 @@
+.breadcrumb {
+	background: $gray-100;
+	align-items: center;
+	padding: 6px 8px;
+	width: 100%;
+	&-item {
+		@extend .typo-text--sm;
+		color: #4a4a4a;
+		display: inline-flex;
+		&:before {
+			font-weight: 300;
+		}
+		a {
+			@extend .typo-text--sm;
+			display: inline-block;
+			color: #4a4a4a;
+		}
+	}
+}

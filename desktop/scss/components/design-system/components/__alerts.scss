@@ -1,0 +1,230 @@
+$theme-colors-alert: (
+  "grayscale": $grayscale-100,
+  "success": $success-100,
+  "info": $info-100,
+  "warning": $warning-100,
+  "danger": $danger-100,
+);
+$theme-colors-alert-icon: (
+  "grayscale": $grayscale,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+);
+$theme-colors-alert-border: (
+  "grayscale": $grayscale-200,
+  "success": $success-200,
+  "info": $info-200,
+  "warning": $warning-200,
+  "danger": $danger-200,
+);
+$theme-colors-alert-text: (
+  "grayscale": (
+    title: $grayscale-800,
+    des: $grayscale-700,
+  ),
+  "success": (
+    title: $success-800,
+    des: $success-700,
+  ),
+  "info": (
+    title: $info-900,
+    des: $info-700,
+  ),
+  "warning": (
+    title: $warning-800,
+    des: $warning-700,
+  ),
+  "danger": (
+    title: $danger-800,
+    des: $danger-700,
+  ),
+);
+
+$alert-border-radius: $border-radius !default;
+$alert-border-width: $border-width !default;
+
+//
+// Base styles
+//
+.alert {
+  $this: '.alert';
+  position: relative;
+  border: $alert-border-width solid $grayscale-400;
+  background: $white;
+  @include border-radius($alert-border-radius);
+  .icon-circle {
+    background: $grayscale;
+    color: $white;
+  }
+  .label {
+    align-items: flex-start;
+  }
+  &-single {
+    display: inline-flex;
+    .label-text {
+      flex: 1;
+    }
+    &#{$this}-lg {
+      padding: $spacing-base - 1 $spacing-base * 2;
+      [class*="ic-"] {
+        margin-top: 4px;
+      }
+      .label-text {
+        @extend .f-s-p-20;
+      }
+    }
+    &#{$this}-md {
+      padding: $spacing-base - 1 $spacing-base * 2;
+      [class*="ic-"] {
+        margin-top: 3px;
+      }
+      .label-text {
+        @extend .f-s-p-16;
+      }
+    }
+    &#{$this}-sm {
+      padding: $spacing-base - 1 $spacing-base * 2;
+      [class*="ic-"] {
+        margin-top: 2px;
+      }
+      .label-text {
+        @extend .f-s-p-14;
+      }
+    }
+    &#{$this}-xs {
+      padding: 1px $spacing-base;
+      [class*="ic-"] {
+        margin-top: 3px;
+      }
+      .label-text {
+        @extend .f-s-p-14;
+      }
+    }
+  }
+  &-full-text {
+    .label {
+      display: flex;
+      span {
+        flex: 1;
+      }
+    }
+    #{$this}-title {
+      margin-bottom: $spacing-base * 2;
+      padding-bottom: $spacing-base * 2;
+      border-bottom: $alert-border-width solid $grayscale-300;
+    }
+    &#{$this}-lg {
+      .alert-title {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .alert-des {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &#{$this}-md {
+      .alert-title {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .alert-des {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    &#{$this}-sm {
+      .alert-title {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      .alert-des {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    &#{$this}-xs {
+      .alert-title {
+        font-size: 14px;
+        line-height: 14px;
+      }
+      .alert-des {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  &-close {
+    cursor: pointer;
+  }
+  // size
+  &-lg {
+    padding: $spacing-base * 3 - 1 $spacing-base * 4;
+  }
+  &-md {
+    padding: $spacing-base * 2.5 - 1 $spacing-base * 3;
+  }
+  &-sm {
+    padding: $spacing-base * 2 - 1 $spacing-base * 2.5;
+  }
+  &-xs {
+    padding: $spacing-base * 2.5 - 1 $spacing-base * 2 $spacing-base + 1;
+  }
+}
+
+@each $color, $value in $theme-colors-alert {
+  .alert-#{$color} {
+    background: $value;
+  }
+}
+@each $color, $value in $theme-colors-alert-border {
+  .alert-#{$color} {
+    border-color: $value;
+    .alert-des {
+      border-top-color: $value;
+    }
+  }
+}
+@each $color, $value in $theme-colors-alert-icon {
+  .alert-#{$color} {
+    [class^="ic-"],
+    [class*=" ic-"] {
+      color: $value;
+    }
+    .ic-circle {
+      background: $value;
+      color: $white;
+    }
+  }
+}
+@each $color, $detail in $theme-colors-alert-text {
+  $title: map-get($detail, "title");
+  $des: map-get($detail, "des");
+  .alert-full-text.alert-#{$color} {
+    .alert-title {
+      color: $title;
+    }
+    .alert-des {
+      color: $des;
+    }
+  }
+  .alert-#{$color} {
+    .alert-text {
+      color: $title;
+    }
+    .label-text {
+      color: $des;
+    }
+  }
+} 
+.alert {
+  &-no-fill {
+    height: auto !important;
+    background: none;
+    border: none;
+    padding: 0 !important;
+  }
+}

@@ -1,0 +1,26 @@
+.c-pv {
+	&s {
+		&--column {
+			display: flex;
+		}
+	}
+	& {
+		width: calc(100% / 5);
+		margin-bottom: 16px;
+		padding: 0 20px;
+	}
+	&__img {
+		margin-bottom: 8px;
+		width: 200px;
+		height: 132px;
+		@include flexCenter();
+	}
+	&__name {
+		@extend .typo-title--small;
+		@extend .re-link--normal;
+		font-weight: normal;
+		@include setLine(2);
+		margin-bottom: 4px;
+		color: $gray-700;
+	}
+}

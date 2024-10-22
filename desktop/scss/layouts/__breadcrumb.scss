@@ -1,0 +1,34 @@
+.breadcrumb {
+	// cls
+	min-height: 20px;
+	&-item {
+		@extend .typo-text;
+		a {
+			position: relative;
+			display: inline-block;
+			color: $link-500;
+			&:hover {
+				color: $link-500;
+				&:before {
+					transform: scaleX(1);
+				}
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: -1px;
+				width: 100%;
+				height: 1px;
+				background-color: $link-500;
+				-webkit-transform: scaleX(0);
+				-ms-transform: scaleX(0);
+				transform: scaleX(0);
+				transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+			}
+		}
+		&:last-child {
+			color: $link-500;
+		}
+	}
+}

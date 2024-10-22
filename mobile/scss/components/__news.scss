@@ -1,0 +1,82 @@
+.c-new {
+   $this: &;
+   margin-bottom: 16px;
+   &:last-child {
+      margin-bottom: 0;
+   }
+   &s {
+      &--column {
+         display: flex;
+         #{$this} {
+            width: calc((100% - 60px) / 4);
+            margin-right: 20px;
+         }
+      }
+      &--row {
+         #{$this} {
+            display: flex;
+            margin-bottom: $margin * 2;
+         }
+         #{$this}__img {
+            width: 105px;
+            height: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            margin-bottom: 0;
+            border-radius: 3.5px;
+            border: solid 0 #e9ecef;
+            overflow: hidden;
+         }
+         #{$this}__info {
+            flex: 1;
+         }
+         .e-tag {
+            // margin-bottom: 0;
+         }
+      }
+      &--video {
+         #{$this} {
+            flex: 1;
+            #{$this}__img {
+               position: relative;
+               img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
+               &:before {
+                  // content: "\e9b9";
+                  content: "\e817";
+                  font-family: "icon";
+                  position: absolute;
+                  z-index: 2;
+                  top: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+                  font-size: 24px;
+                  color: $white;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+               }
+            }
+         }
+      }
+   }
+   &__img {
+      margin-bottom: 8px;
+      width: 275px;
+      height: 183px;
+      @include flexCenter();
+   }
+   &__name {
+      @extend .typo-text;
+      font-weight: 500;
+      @include setLine(3);
+      // margin-bottom: 6px;
+      color: $gray-700;
+   }
+}

@@ -1,0 +1,36 @@
+// Icon Sizes
+// -------------------------
+// Icon Scaling with size of parent
+@for $i from 2 through 3 {
+	.#{$ic-css-prefix}-#{$i}x {
+		font-size: $i * 1em;
+	}
+}
+.#{$ic-css-prefix}-2x {
+	&.#{$ic-css-prefix}-circle,
+	&.#{$ic-css-prefix}-circle-outline {
+		font-size: (2 - 0.75) * 1em;
+		width: 1.6em;
+		height: 1.6em;
+	}
+	&.#{$ic-css-prefix}-square,
+	&.#{$ic-css-prefix}-square-outline {
+		font-size: (2 - 0.5) * 1em;
+		width: 1.3334em;
+		height: 1.3334em;
+	}
+}
+.#{$ic-css-prefix}-3x {
+	&.#{$ic-css-prefix}-circle,
+	&.#{$ic-css-prefix}-circle-outline {
+		font-size: (3 - 0.75) * 1em;
+		width: 1.3334em;
+		height: 1.3334em;
+	}
+	&.#{$ic-css-prefix}-square,
+	&.#{$ic-css-prefix}-square-outline {
+		font-size: (3 - 0.5) * 1em;
+		width: 1.2em;
+		height: 1.2em;
+	}
+}

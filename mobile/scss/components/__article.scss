@@ -1,0 +1,94 @@
+.article__list {
+    &-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .article__tit {
+            display: block;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #32373D;
+        }
+
+        .article__author {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 4px;
+
+            img {
+                max-width: 16px;
+                border-radius: 1000px;
+                margin-right: 4px;
+            }
+
+            &-name {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                color: #6A737A;
+            }
+        }
+
+        img {
+            max-width: 126px;
+            border-radius: 6px;
+            margin-right: 12px;
+        }
+    }
+}
+
+.article__related {
+    &-title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        color: #212529;
+    }
+
+    .related__list {
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+
+        &-item {
+            display: flex;
+            flex-basis: calc(100% / 3);
+            max-width: 368px;
+
+            a {
+                display: flex;
+            }
+
+            img {
+                max-width: 128px;
+            }
+        }
+
+        .related__item-info {
+            margin-left: 8px;
+
+            .tit {
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
+                color: #444B52;
+            }
+
+            .datetime {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: #6A737A;
+                margin-top: 4px;
+            }
+        }
+    }
+}

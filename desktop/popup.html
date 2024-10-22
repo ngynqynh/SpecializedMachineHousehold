@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="vi"> 
+
+<head>
+    <title>FPTShop</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="images/favicon.ico" />
+    <!-- Css -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/header.footer.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <!-- <link rel="stylesheet" href="css/system.css" /> -->
+    <link rel="stylesheet" href="css/icon-fptshop.css" />
+    <link rel="stylesheet" href="css/lightslider.min.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/nouislider.min.css" />
+    <link rel="stylesheet" href="css/lightgallery.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- jsLib -->
+    <script src="js/libs/jquery-3.2.0.min.js"></script>
+    <script src="js/libs/swiper.min.js"></script>
+    <script src="js/libs/nouislider.min.js"></script>
+    <script src="js/libs/wNumb.js"></script>
+    <script src="js/libs/lightgallery-all.min.js"></script>
+    <script src="js/libs/lightslider.min.js"></script>
+    <script src="js/libs/spritespin.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/modal.js"></script>
+</head>
+
+<body>
+    <!-- popup find shop -->
+    <div class="modal c-fs modal-find-fshop js-modal js--popup-dropdown" id="js--find-shop" data-animation="on">
+        <div class="c-modal__wrapper">
+            <div class="c-modal__box">
+                <div class="card card-normal">
+                    <div class="card-title"> Tìm shop có hàng gần nhất
+                        <button class="c-modal--close js-modal__close"></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="c-fs__block">
+                            <div class="title">Chọn địa điểm</div>
+                            <div class="c-fs__dropdown">
+                                <div class="c-dropdown c-dropdown--col">
+                                    <div class="c-dropdown-button">Hồ Chí Minh <span class="icon-arrow-combo"></span>
+                                    </div>
+                                    <div class="c-dropdown-menu">
+                                        <div class="c-dropdown-menu__top">
+                                            <div class="c-dropdown-menu__search">
+                                                <div class="cs-input-group cs-input-group--search">
+                                                    <input type="text" name="" id="" class="cs-input" />
+                                                    <span class="icon-search cs-input-search"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="c-dropdown-menu__wrapper">
+                                            <a href="#" class="active">Hà Nội</a>
+                                            <a href="#">Hồ Chí Minh</a>
+                                            <a href="#">Đồng Tháp</a>
+                                            <a href="#">Đồng nai</a>
+                                            <a href="#">Thái Nguyên</a>
+                                            <a href="#">Gia Lai</a>
+                                            <a href="#">Nha Trang</a>
+                                            <a href="#">Quãng Ngãi</a>
+                                            <a href="#">An Giang</a>
+                                            <a href="#">Cà Mau</a>
+                                            <a href="#">Đà Nẵng</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-dropdown">
+                                    <div class="c-dropdown-button active"> Quận 2 <span class="icon-arrow-combo"></span>
+                                    </div>
+                                    <div class="c-dropdown-menu" style="display: block">
+                                        <div class="c-dropdown-menu__wrapper">
+                                            <a href="#" class="active">Dropdown 2 1</a>
+                                            <a href="#">Dropdown 2 2</a>
+                                            <a href="#">Dropdown 2 3</a>
+                                            <a href="#">Dropdown 2 4</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-fs__block--checkbox checkbox">
+                            <label for="checkbox-filter">
+                                <input type="checkbox" id="checkbox-filter" class="form-checkbox">
+                                <span class="form-label-text"> Chỉ hiển thị Trung tâm Laptop</span>
+                            </label>
+                        </div>
+                        <div class="c-fs__block--location">
+                            <div class="title"> Có 13 shop tại Quận 2, Hồ Chí Minh. <span>Hãy chọn shop bạn muốn giữ
+                                    hàng.</span>
+                            </div>
+                            <div class="c-fs__location">
+                                <ul>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca1" />
+                                            <label for="loca1">192A Nguyễn Thị Định, P. An Phú , Quận 2, Hồ Chí
+                                                Minh</label>
+                                            <span class="success">
+                                                </i> Có hàng</span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca2" />
+                                            <label for="loca2">358 Nguyễn Duy Trinh, P. Bình Trưng Tây , Quận 2, Hồ Chí
+                                                Minh</label>
+                                            <span class="warning">
+                                                Tạm hết hàng- Đặt hàng lấy sau 2-7 ngày</span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca3" />
+                                            <label for="loca3">141 Trần Não, Khu Phố 3, P. Bình An , Quận 2, Hồ Chí
+                                                Minh</label>
+                                            <span class="success">
+                                                </i> Có hàng</span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca4" />
+                                            <label for="loca4">137 Tô Ngọc Vân, Khu Phố 4, P. Linh Tây , Quận Thủ Đức,
+                                            </label>
+                                            <span class="success">
+                                                </i> Có hàng</span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="badge"><a href="">Trung tâm Laptop</a></span>
+                                        <div class="radio">
+                                            <input type="radio" value="radio-location" name="radio-location"
+                                                id="loca5" />
+                                            <label for="loca5">190 Nguyễn Thị Thập, P. Bình Thuận , Quận 7, Hồ Chí
+                                                Minh</label>
+                                            <span class="success">
+                                                </i> Có hàng</span>
+                                            <a href="https://goo.gl/maps/yZB1xe41sUbTKb9R9" target="_blank"
+                                                class="c-fs-open-map btn btn-outline-light re-link--normal js--open-map"><i
+                                                    class="icon-location"></i> Xem bản đồ</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="c-fs__viewmore">
+                                    <a href="#" class="re-link js--open-modal">Xem thêm (8 shop) <span
+                                            class="icon-down-dir"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-fs__submit">
+                            <button class="btn btn-xl btn-primary">ĐẶT GIỮ HÀNG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- popup refund -->
+    <div class="modal c-modal modal-refund c-fs" id="js--refund" data-animation="on">
+        <div class="c-modal__wrapper">
+            <div class="c-modal__box">
+                <div class="card card-normal">
+                    <div class="card-title">
+                        Chính sách đổi trả, bảo hành chính hãng
+                        <button class="c-modal--close js-modal__close"></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body__text">
+                            <div class="para-title">
+                                1. Bảo hành chính hãng
+                            </div>
+                            <p class="para">
+                                “Miễn phí 1 đổi 1 nếu có lỗi phần cứng trong vòng 30 ngày đầu tiên mua hàng”.
+                            </p>
+                            <div class="para-title">
+                                2. Chính hãng đổi trả
+                            </div>
+                            <div class="para">
+                                <strong>FPTShop</strong> sẽ kiểm tra tình trạng máy và thông báo đến khách hàng về phí
+                                phải thu ngay tại cửa hàng
+                            </div>
+                        </div>
+                        <div class="card-body__module">
+                            <div class="card st-card card-normal">
+                                <h2 class="card-title">Định nghĩa và thuật ngữ trong chính sách đổi trả</h2>
+                                <div class="card-body">
+                                    <div class="c-question js--c-question">
+                                        <div class="c-question-item active">
+                                            <div class="head"><span class="icon-help-circled"></span>
+                                                <div>
+                                                    <p>Lỗi Nhà sản xuất (NSX)</p>
+                                                </div>
+                                            </div>
+                                            <div class="body">
+                                                <div>
+                                                    <p style="text-align:justify; margin-bottom:11px">Accordion content
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="c-question__icon"><span class="icon-plus"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="c-question js--c-question">
+                                        <div class="c-question-item">
+                                            <div class="head"><span class="icon-help-circled"></span>
+                                                <div>
+                                                    <p>Lỗi người sử dụng</p>
+                                                </div>
+                                            </div>
+                                            <div class="body">
+                                                <div>
+                                                    <p style="text-align:justify; margin-bottom:11px">Accordion content
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="c-question__icon"><span class="icon-plus"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="c-question js--c-question">
+                                        <div class="c-question-item">
+                                            <div class="head"><span class="icon-help-circled"></span>
+                                                <div>
+                                                    <p>Phí đổi trả (nếu có)</p>
+                                                </div>
+                                            </div>
+                                            <div class="body">
+                                                <div>
+                                                    <p style="text-align:justify; margin-bottom:11px">Accordion content
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="c-question__icon"><span class="icon-plus"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="c-question js--c-question">
+                                        <div class="c-question-item">
+                                            <div class="head"><span class="icon-help-circled"></span>
+                                                <div>
+                                                    <p>Điều kiện đổi trả</p>
+                                                </div>
+                                            </div>
+                                            <div class="body">
+                                                <div>
+                                                    <p style="text-align:justify; margin-bottom:11px">Sản phẩm đủ điều
+                                                        kiện đổi trả là sản phẩm không thuộc trường hợp nằm ngoài chính
+                                                        sách bảo hành, tại link sau:
+                                                        <a href="https://fptshop.com.vn/ho-tro/chinh-sach-bao-hanh"
+                                                            class="re-link">https://fptshop.com.vn/ho-tro/chinh-sach-bao-hanh</a>
+                                                    <p> Và:</p>
+                                                    <ul>
+                                                        <li>
+                                                            <span class="dots"></span> Đồng hồ thời trang: chỉ được
+                                                            hưởng chính sách bảo hành, đổi trả khi còn phiếu bảo hành
+                                                        </li>
+                                                        <li>
+                                                            <span class="dots"></span> Đối với vòng đeo tay: khách hàng
+                                                            phải trả lại sạc, nếu không còn sạc FPT Shop chỉ tiếp nhận
+                                                            bảo hành, không áp dụng đổi trả.
+                                                        </li>
+                                                        <li>
+                                                            <span class="dots"></span> Đối với máy in: khách hàng phải
+                                                            trả cả vỏ hộp, nếu không còn vỏ hộp, FPT Shop chỉ tiếp nhận
+                                                            bảo hành, không áp dụng đổi.
+                                                        </li>
+                                                        <li>
+                                                            <span class="dots"></span> Đối với sản phẩm trả góp qua Nhà
+                                                            trả góp: Khách hàng phải thực hiện Hủy hợp đồng hoặc Tất
+                                                            toán hợp đồng trả góp trước khi đổi trả sản phẩm tại FPTShop
+                                                        </li>
+                                                    </ul>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="c-question__icon"><span class="icon-plus"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="para para-link">
+                            Tìm hiểu chính sách đổi trả sản phẩm, <a href=""> xem chi tiết.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- popup installment -->
+    <div class="modal c-modal modal-installment c-fs " id="js--installment" data-animation="on">
+        <div class="c-modal__wrapper">
+            <div class="c-modal__box">
+                <div class="card card-normal">
+                    <div class="card-title">
+                        CHÍNH SÁCH TRẢ GÓP
+                        <button class="c-modal--close js-modal__close"></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="para">
+                            Chương trình áp dụng cho <strong>chủ thẻ Visa/Mastercard/JCB</strong> (không áp dụng cho thẻ
+                            phụ, thẻ Debit và thẻ tín dụng phát hành tại nước ngoài) <strong>thực hiện trả góp tại
+                                website FPT Shop qua cổng thanh toán của Ngân Lượng</strong> (không được cà thẻ tại siêu
+                            thị, tại nhà)
+                        </div>
+                        <div class="card-body__text">
+                            <div class="para-title">
+                                1. Quy định chung
+                            </div>
+                            <ul class="st-list">
+                                <li>
+                                    <span class="dots"></span> Thời gian trả góp: <strong>6 tháng, 9 tháng và 12
+                                        tháng</strong>
+                                </li>
+                                <li>
+                                    <span class="dots"></span> Không giới hạn số lần mua trả góp (số lần trả góp tuỳ
+                                    thuộc vào hạn mức của thẻ tín dụng)
+                                </li>
+                                <li>
+                                    <span class="dots"></span> Giá trị thanh toán thẻ từ <strong> 3.000.000 VNĐ trở
+                                        lên</strong>
+                                </li>
+                                <li>
+                                    <span class="dots"></span> Chủ thẻ không được huỷ giao dịch sau khi giao dịch đã
+                                    chuyển sang trả góp/ hoặc giao dịch đã lên sao kê
+                                </li>
+                            </ul>
+                            <div class="para-title">
+                                2. Cần lưu ý trước khi thực hiện trả góp
+                            </div>
+                            <ul class="st-list">
+                                <li>
+                                    <span class="dots"></span> Hiệu lực còn lại của thẻ phải lớn hơn kì hạn trả góp
+                                </li>
+                                <li>
+                                    <span class="dots"></span> Số dư của thẻ phải lớn hơn hoặc bằng tổng giá trị trả góp
+                                </li>
+                                <li>
+                                    <span class="dots"></span> Thẻ tín dụng đã được đăng kí chức năng thanh toán trực
+                                    tuyến (Nếu Khách hàng chưa đăng kí chức năng này, vui lòng liên hệ đến ngân hàng
+                                    phát hành để được hướng dẫn)
+                                </li>
+                                <li>
+                                    <span class="dots"></span> Không nên giao dịch cận ngày sao kê. Đối với riêng 7 ngân
+                                    hàng bao gồm VCB, SHB, MBBank, OCB, Bản Việt, Standard Chartered, Home Credit, Ngân
+                                    Lượng khoá trên hệ thống các ngày gần sao kê tuỳ
+                                    theo từng Ngân hàng, Loại thẻ. Trong thời gian đó chủ thẻ vui lòng sử dụng thẻ của
+                                    17 Ngân hàng còn lại để thực hiện giao dịch trả góp
+                                </li>
+                                <li>
+                                    <span class="dots"></span> Khách hàng phải nhập đúng số thẻ, ngày hết hạn và số CVV
+                                    khi thực hiện giao dịch
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="para-title">
+                            3. Đổi/trả hàng đối với đơn hàng trả góp
+                        </div>
+                        <div class="para">
+                            <strong>Trường hợp khách hàng muốn đổi sang sản phẩm khác khi đã giao dịch thành
+                                công:</strong> Khách hàng được đổi sang sản phẩm khác có giá trị <strong>bằng hoặc cao
+                                hơn</strong> giá trị sản phẩm đã trả góp trước đó
+                        </div>
+                        <div class="para para-link">
+                            Tìm hiểu chính sách đổi trả sản phẩm, <a href=""> xem chi tiết.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup-mini -->
+    <div class="modal c-modal c-fs js-modal modal-mini" id="js--mini" data-animation="on">
+        <div class="c-modal__wrapper mini-size">
+            <div class="c-modal__box">
+                <div class="card mini-height">
+                    <div class="card-title">
+                        Giới thiệu về hãng
+                        <img class="mini-logo" src="./images/logo-kalite.png" alt="">
+                        <button class="c-modal--close js-close-mini"></button>
+                    </div>
+                    <div class="mini-content">
+                        <div class="mini-wraper">
+                            <ul class="mini-style">
+                                <li>Thương hiệu Việt Nam, thành lập năm 2019.</li>
+                                <li>Các dòng sản phẩm của Kalite luôn rất được lòng khách hàng vì
+                                    thiết kế sang trọng, tinh
+                                    tế, hiện đại, không ngừng cải tiến và nâng cao chất lượng bằng việc ứng dụng công
+                                    nghệ
+                                    mới như máy ép chậm, nồi chiên không dầu...</li>
+                                <li>Các sản phẩm của Kalite được sản xuất tại Thái Lan, Trung Quốc,
+                                    Việt Nam,... với chất
+                                    lượng tuyệt hảo. Với mong muốn nâng cao sức khoẻ và chất lượng cuộc sống, hỗ trợ bạn
+                                    chế
+                                    biến những bữa ăn lành mạnh, tốt cho sức khoẻ cả gia đình. <a class="link" href="">Tìm hiểu
+                                        thêm</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JsCall -->
+    <script src="js/functions.js"></script>
+</body>
+
+</html>

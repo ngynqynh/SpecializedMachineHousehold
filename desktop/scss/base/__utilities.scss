@@ -1,0 +1,19 @@
+.border {
+	&-bottom {
+		border-bottom: $border;
+	}
+}
+.border-radius{
+	&--none{
+		border-radius: 0;
+	}
+}
+
+
+.box-shadow{
+   box-shadow: $box-shadow;
+}
+
+.hide{
+	display: none;
+}

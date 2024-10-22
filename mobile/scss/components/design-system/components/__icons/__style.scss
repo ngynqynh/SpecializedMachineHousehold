@@ -1,0 +1,60 @@
+$grayscale: #939ca3;
+$white: #fff !default;
+@each $size, $detail in $icon-props {
+   $font-size-inner: map-get($detail, "size-inner");
+   $font-default: map-get($detail, "size-default");
+   $width: map-get($detail, "size-default");
+   .#{$ic-css-prefix}-#{$size} {
+      font-size: #{$font-default};
+      &.#{$ic-css-prefix}-circle,
+      &.#{$ic-css-prefix}-square,
+      &.#{$ic-css-prefix}-circle-outline,
+      &.#{$ic-css-prefix}-square-outline {
+         width: #{$width};
+         height: #{$width};
+      }
+      &.#{$ic-css-prefix}-circle,
+      &.#{$ic-css-prefix}-circle-outline {
+         font-size: #{$font-size-inner - 0px};
+      }
+
+      &.#{$ic-css-prefix}-square,
+      &.#{$ic-css-prefix}-square-outline {
+         font-size: #{$font-size-inner};
+      }
+   }
+}
+
+.#{$ic-css-prefix} {
+   &-square,
+   &-circle {
+      background: $grayscale;
+      color: $white !important;
+      // @include flexCenter(inline-flex);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      &-outline {
+         color: $grayscale;
+         border-width: 1px;
+         border-color: $grayscale;
+         // @include flexCenter(inline-flex);
+         display: inline-flex;
+         justify-content: center;
+         align-items: center;
+         border: 1px solid $grayscale;
+      }
+   }
+   &-circle {
+      &,
+      &-outline {
+         border-radius: 50%;
+      }
+   }
+   &-square {
+      &,
+      &-outline {
+         border-radius: 2px;
+      }
+   }
+}

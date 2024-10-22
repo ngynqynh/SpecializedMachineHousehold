@@ -1,0 +1,18 @@
+.list-star {
+	margin-bottom: 4px;
+	@include flexCenter();
+	ul {
+		display: inline-flex;
+		align-items: center;
+		li {
+			&:not(:last-child) {
+				margin-right: 8px;
+			}
+		}
+		& + span {
+			font-weight: 300;
+			font-size: 14px;
+			vertical-align: text-bottom;
+		}
+	}
+}

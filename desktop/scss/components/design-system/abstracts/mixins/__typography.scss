@@ -1,0 +1,16 @@
+@mixin typography($type: text, $weight: false) {
+  @if $type== heading {
+    color: $headings-color;
+  }
+  @if $type== paragraph {
+    color: $paragraph-color;
+  }
+  @if $type== text {
+    color: $paragraph-color;
+  }
+  @if $weight {
+    font-weight: 500;
+  } @else {
+    font-weight: 400;
+  }
+}

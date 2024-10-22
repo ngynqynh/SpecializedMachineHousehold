@@ -1,0 +1,69 @@
+@import 'mixins/_mixin_grid';
+@import 'mixins/_border-radius';
+@import 'mixins/_typography';
+
+// Mixin Responsive
+@mixin respond($breakpoint) {
+	@if $breakpoint == xs {
+		@media only screen and (max-width: 512px) {
+			@content;
+		} //600px
+	}
+	@if $breakpoint == sm {
+		@media only screen and (max-width: 600px) {
+			@content;
+		} //600px
+	}
+	@if $breakpoint == mdm {
+		@media only screen and (max-width: 768px) {
+			@content;
+		} //750px
+	}
+	@if $breakpoint == md {
+		@media only screen and (max-width: 992px) {
+			@content;
+		} //900px
+	}
+	@if $breakpoint == lg {
+		@media only screen and (max-width: 1200px) {
+			@content;
+		} //1200px
+	}
+	@if $breakpoint == xs {
+		@media only screen and (min-width: 1200px) {
+			@content;
+		} //1800
+	}
+}
+@mixin textType($fs: null, $lh: null, $fw: null, $ff: null, $setLine: null) {
+	font-size: $fs;
+	line-height: $lh;
+	@if ($fw != null) {
+		font-weight: $fw;
+	}
+	@if ($ff != null) {
+		font-family: $ff;
+	}
+}
+
+@mixin flexCenter($flex) {
+	display: $flex;
+	align-items: center;
+	justify-content: center;
+}
+@mixin text-shorten($lines) {
+	@if $lines != null {
+	  display: -webkit-box;
+	  -webkit-line-clamp: $lines;
+	  /* autoprefixer: off */
+	  -webkit-box-orient: vertical;
+	  /* autoprefixer: on */ 
+	  overflow:hidden;
+  }
+  @else{
+	  text-overflow:ellipsis;
+	  white-space:nowrap;
+	  overflow:hidden;
+	  display:block;
+  }
+ }

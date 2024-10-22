@@ -1,0 +1,54 @@
+.e-tag {
+	&s {
+		display: block;
+		width: 100%;
+		font-size: 0;
+	}
+	& {
+		display: inline-block;
+		padding: 2px 8px;
+		border-radius: 4px;
+		color: $gray-600;
+		background: $gray-100;
+		@include textType(14px, 20px);
+		margin-right: 8px;
+		margin-bottom: 8px;
+	}
+}
+.tag {
+	&s {
+		font-size: 0;
+	}
+	display: inline-block;
+	@include textType(14px, 14px);
+	color: $grayscale-600;
+	background: $grayscale-200;
+	border-radius: $border-radius;
+	padding: $padding-sm + 1 $padding;
+	margin: $margin $margin 0 0;
+	span,
+	i {
+		@include textType(inherit, inherit);
+	} 
+	i{
+		&.icon-tag{
+			font-size: 12px;
+		}
+		&:first-child{
+			margin-right: 4px;
+		}
+		&:last-child{
+			margin-left: 4px;
+		}
+	}
+	&:hover {
+		color: $grayscale-700;
+	}
+	.icon-cancel {
+		display: inline-flex;
+		cursor: pointer;
+		&:before {
+			// content: '\e948';
+		}
+	}
+}

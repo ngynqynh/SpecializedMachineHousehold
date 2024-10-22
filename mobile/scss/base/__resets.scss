@@ -1,0 +1,336 @@
+body {
+    color: $grayscale-700;
+}
+
+.re-link {
+    @extend .typo-text;
+    color: $blue-500;
+    position: relative;
+    display: inline-block;
+    &:hover,
+    &:focus {
+        color: $blue-500;
+    }
+    &--normal {
+        color: $gray-700;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $blue-500;
+            &:before {
+                display: none;
+            }
+        }
+    }
+    &--gray {
+        text-decoration: underline;
+        color: $grayscale-500;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $grayscale-700;
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+.re-hotline {
+    font-size: 14px;
+    line-height: 20px;
+    color: $red-500;
+    font-weight: 500;
+}
+
+// reset typo
+.re-para {
+    @extend .typo-text;
+    margin-bottom: 0;
+}
+
+.re-price {
+    font-weight: 500;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.re-price-strike {
+    color: $gray-500;
+    display: inline-block;
+    text-decoration: line-through;
+}
+
+// reset color
+.re-red {
+    color: $red-500;
+}
+
+.re-blue {
+    color: $blue-500;
+}
+
+//reset swiper
+.swiper-custom {
+    [class*="swiper-button"] {
+        @include flexCenter();
+        &:after {
+            display: none;
+        }
+        span {
+            display: inline-block;
+            font-size: 22px;
+            color: #4d4d4d;
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+    .swiper-button-prev {
+        left: 5px;
+        i {
+            &:before {
+                // content: "\e90c";
+                content: "\e80b";
+            }
+        }
+    }
+    .swiper-button-next {
+        right: 5px;
+        span {
+            position: relative;
+            left: 2px;
+        }
+        i {
+            &:before {
+                // content: "\e90f";
+                content: "\e808";
+            }
+        }
+    }
+    .swiper-pagination {
+        bottom: -3px;
+        &-bullet {
+            background: $gray-400;
+            &-active {
+                background: #d1281e;
+            }
+        }
+    }
+    .swiper-button-disabled {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+}
+
+.re-swiper {
+    .swiper-pagination {
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        &-bullet {
+            max-width: 40px;
+            width: 100%;
+            height: 3px;
+            border-radius: 5px;
+            &-active {
+                background: #cd1817;
+            }
+        }
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 2px;
+    }
+}
+
+// reset card
+.card {
+    &-title {
+        @extend .typo-text--lg;
+        font-weight: 500;
+        padding: 8px 0;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $grayscale-900;
+        a {
+            @include textType(14px, 1.43, normal);
+        }
+        &--badge {
+            justify-content: flex-start;
+            .badge {
+                margin-left: 8px;
+                padding: 1px 4px;
+                @include textType(12px, 1.33, 500);
+            }
+        }
+    }
+    &-body {
+        padding: 0;
+    }
+}
+
+.card-normal {
+    .card-title {
+        padding: 8px 10px;
+        margin-bottom: 0;
+    }
+}
+
+.re-card {
+    padding: 0 8px;
+}
+
+// header
+.search-span {
+    display: inline-flex;
+    align-items: center;
+    height: calc(100% - 8px);
+    i {
+        font-size: 17px;
+    }
+}
+
+// icon
+.icon-cam:before {
+    // content: "\e93b";
+    content: "\e93a";
+}
+
+// design system
+.m-b-16 {
+    margin-bottom: 16px;
+}
+
+.m-r-16 {
+    margin-right: 16px;
+}
+
+.f-s-p-18 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.f-s-p-16 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #444b52;
+    font-weight: 400;
+}
+
+.f-w-500 {
+    font-weight: 500;
+}
+
+.m-x-8 {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.m-b-4 {
+    margin-bottom: 4px;
+}
+
+.m-b-8 {
+    margin-bottom: 8px;
+}
+
+.m-b-12 {
+    margin-bottom: 12px;
+}
+
+.m-r-8 {
+    margin-right: 8px;
+}
+
+.m-r-12 {
+    margin-right: 12px;
+}
+
+.m-r-16 {
+    margin-right: 16px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-inline {
+    display: inline-flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.flex-justify-end {
+    justify-content: flex-end;
+}
+
+.flex-align-baseline {
+    align-items: baseline;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-center-ver {
+    align-items: center;
+}
+
+.flex-center-hor {
+    justify-content: center;
+}
+
+.flex-self-baseline {
+    align-self: baseline;
+}
+
+.flex-self-center {
+    align-self: center;
+}
+
+.flex-self-end {
+    align-self: flex-end;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-0 {
+    flex: 0;
+}
+
+.flex-100 {
+    flex-basis: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}

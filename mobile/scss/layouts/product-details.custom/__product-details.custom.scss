@@ -1,0 +1,225 @@
+.lg {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   $this: &;
+   &-backdrop {
+      z-index: 3000000000;
+   }
+   &-on {
+      overflow: hidden;
+   }
+   &-outer {
+      z-index: 3000000000;
+      #{$this}-inner {
+         // position: relative;
+         display: flex;
+         justify-content: center;
+         #{$this}-item {
+            max-width: 960px;
+            text-align: center;
+         }
+         #{$this}-image {
+            // border-radius: 8px;
+         }
+      }
+      #{$this}-thumb-outer {
+         position: relative;
+         transform: translate3d(0, 0%, 0);
+         .lg-toogle-thumb {
+            display: none;
+         }
+         .lg-thumb {
+            margin: 0 auto;
+            &-item {
+               opacity: 0.7;
+               text-align: center;
+               // background: $white;
+               border: none;
+               border-radius: 4px;
+               overflow: hidden;
+               img {
+                  height: 100%;
+                  width: auto;
+                  object-fit: unset;
+               }
+               &.active {
+                  opacity: 1;
+                  border: solid 2px $red-500;
+               }
+               &:hover {
+                  opacity: 1;
+               }
+            }
+         }
+      }
+      #{$this}-thumb {
+         padding: 0 4px 4px;
+         display: flex;
+      }
+      #{$this}-img-wrap {
+         padding: 0;
+      }
+      #{$this}-video-cont {
+         padding: 0;
+      }
+   }
+   &-sub-html {
+      background: none;
+      bottom: unset;
+      top: 8px;
+      bottom: unset !important;
+      max-width: 280px;
+      margin: 0 auto;
+      @include setLine(2);
+      padding: 0;
+      @extend .typo-text;
+   }
+   &-video-cont {
+      max-width: 100% !important;
+      // height: 640px !important;
+      padding: 0;
+   }
+   &-video {
+      padding-bottom: 67.37% !important;
+   }
+   &-icon {
+      font-family: "icon" !important;
+   }
+   &-actions {
+      #{$this}-next,
+      #{$this}-prev {
+         padding: 0;
+         font-size: 31px;
+      }
+      #{$this}-next {
+         &:before {
+            // content: '\e90e';
+            content: "\e808";
+         }
+      }
+      #{$this}-prev {
+         &:after {
+            // content: '\e90b';
+            content: "\e80b";
+         }
+      }
+   }
+   #lg-zoom-in {
+      &:after {
+         // content: '\ea19';
+         content: "\e948";
+      }
+   }
+   #lg-zoom-out {
+      // cursor: no-drop;
+      &:after {
+         // content: '\ea1a';
+         content: "\e947";
+      }
+   }
+   .lg-zoomed #lg-zoom-out {
+      cursor: pointer;
+      // pointer-events: auto;
+   }
+   &-fullscreen {
+      &:after {
+         // content: '\e961';
+         content: "\e93e";
+      }
+      &-on & {
+         &:after {
+            // content: '\e9aa';
+            content: "\e942";
+         }
+      }
+   }
+   &-autoplay-button:after {
+      // content: '\e9b9';
+      content: "\e945";
+   }
+   &-show-autoplay {
+      #{$this}-autoplay-button:after {
+         // content: '\e9b3';
+         content: "\e943";
+      }
+   }
+   &-toolbar {
+      background: none;
+      position: relative;
+      top: unset;
+      bottom: unset;
+      margin-top: 10px;
+      margin-bottom: 16px;
+      padding: 8px 10px;
+      display: flex;
+      justify-content: center;
+      #{$this}-download:after {
+         // content: '\e959';
+         content: "\e93d";
+      }
+      #{$this}-close {
+         position: fixed;
+         top: 8px;
+         right: 8px;
+         &:after {
+            // content: '\e948';
+            content: "\e93b";
+         }
+      }
+      #{$this}-download {
+         order: 1;
+      }
+      #{$this}-icon {
+         padding: 0;
+         height: auto;
+         width: auto;
+         cursor: pointer;
+         margin: 0;
+         line-height: 20px;
+         width: 20px;
+         font-size: 20px;
+         &:not(.lg-close) {
+            margin: 0 10px;
+         }
+      }
+   }
+   #lg-counter {
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 0;
+      @extend .typo-text;
+      padding: 0 4px;
+      color: #edeeef;
+      position: fixed;
+      top: 8px;
+      left: 8px;
+   }
+}
+
+.lg-hide-items {
+   .lg-toolbar {
+      opacity: 1;
+      transform: none;
+   }
+}
+
+// todo base
+// remove overflow to set position sticky
+.mf-body {
+   overflow: unset;
+}
+.mf-mnleft,
+.fs_mnleft {
+   opacity: 0;
+   transition: opacity 0s ease, transform 0.3s ease-out;
+   &.active {
+      opacity: 1;
+   }
+}
+.over {
+   z-index: 1001;
+}
+body {
+   overflow-x: unset;
+}

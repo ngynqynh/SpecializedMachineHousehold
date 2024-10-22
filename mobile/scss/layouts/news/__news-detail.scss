@@ -1,0 +1,26 @@
+.news__detail {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    background-color: #FFF;
+}
+
+.product {
+
+    &__price {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+a {
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        text-decoration: none;
+        color: #0664F9;
+        position: relative;
+    }
+}

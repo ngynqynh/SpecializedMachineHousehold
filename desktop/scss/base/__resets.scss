@@ -1,0 +1,261 @@
+body {
+    color: $grayscale-700;
+}
+
+header {
+    z-index: 1;
+    position: relative;
+}
+
+.re-link {
+    @extend .typo-text;
+    color: $blue-500;
+    position: relative;
+    display: inline-block;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 1px;
+        background-color: $blue-500;
+        -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0);
+        transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $blue-500;
+        &:before {
+            transform: scaleX(1);
+        }
+    }
+    &--normal {
+        color: $gray-700;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $blue-500;
+            &:before {
+                display: none;
+            }
+        }
+    }
+    &--gray {
+        color: $grayscale-500;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $grayscale-700;
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+.re-hotline {
+    @extend .typo-text;
+    color: $red-500;
+    font-weight: 500;
+}
+
+// reset typo
+.re-para {
+    @extend .typo-text;
+    margin-bottom: 0;
+}
+
+.re-price {
+    font-weight: 500;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.re-price-strike {
+    color: $gray-500;
+    display: inline-block;
+    text-decoration: line-through;
+}
+
+// reset color
+.re-red {
+    color: $red-500;
+}
+
+//reset swiper
+.swiper-custom {
+    [class*="swiper-button"] {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        border: solid 1px #ced4da;
+        background-color: #ffffff;
+        @include flexCenter();
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        &:after {
+            display: none;
+        }
+        span {
+            display: inline-flex;
+            color: $gray-700;
+            i {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                transform: none;
+            }
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .swiper-button-prev {
+        left: 5px;
+        i {
+            &:before {
+                // content: "\e90c";
+                content: "\e80b";
+            }
+        }
+    }
+    .swiper-button-next {
+        right: 5px;
+        i {
+            &:before {
+                // content: "\e90f";
+                content: "\e808";
+            }
+        }
+    }
+    .swiper-pagination {
+        bottom: 5px;
+        &-bullet {
+            background: $gray-400;
+            &-active {
+                background: #d1281e;
+            }
+        }
+    }
+    .swiper-button-disabled {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+}
+
+.re-swiper {
+    .swiper-pagination {
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        &-bullet {
+            width: 100%;
+            max-width: 40px;
+            height: 3px;
+            border-radius: 5px;
+            transition: all 0.4s ease;
+            &:hover {
+                opacity: 1;
+                background: $primary-500;
+            }
+            &:focus {
+                background: $primary-600;
+            }
+            &-active {
+                background: #cd1817;
+            }
+        }
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 2px;
+    }
+}
+
+// reset card
+.card {
+    &-title {
+        @extend .typo-title;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        color: $grayscale-900;
+        a {
+            @include textType(14px, 20px, normal);
+            margin-left: $margin;
+            transform: translateY(-2px);
+        }
+        &--badge {
+            justify-content: flex-start;
+            .badge {
+                margin-left: 8px;
+                padding: 4px 8px;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 1.33;
+            }
+        }
+        h2 {
+            margin-bottom: 0;
+            font-size: inherit;
+            line-height: inherit;
+            font-weight: inherit;
+            flex: 1;
+        }
+    }
+    &-body {
+        padding: 0;
+    }
+}
+
+.card-normal {
+    .card-title {
+        padding: 16px 20px;
+        margin-bottom: 0;
+    }
+}
+
+.re-card {
+    padding: 16px 20px 0;
+}
+
+// form
+.radio {
+    input[type="radio"] {
+        &:after,
+        &:before {
+            width: 16px;
+            height: 16px;
+        }
+        &:checked {
+            &:after {
+                background: none;
+            }
+            &:before {
+                background: $red-500;
+                -webkit-transform: scale(0.625);
+                -ms-transform: scale(0.625);
+                -o-transform: scale(0.625);
+                transform: scale(0.625);
+            }
+        }
+    }
+}
+
+// icon
+.icon-cam:before {
+    // content: "\e93b";
+    content: "\e93a";
+}
+
+//pagination
+.pagination {
+    &-link {
+        @include textType(14px, 20px);
+        padding: $padding 13px;
+    }
+}

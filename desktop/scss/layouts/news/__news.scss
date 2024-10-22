@@ -1,0 +1,188 @@
+.news__card {
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(10, 10, 10, 0.15);
+    border-radius: 6px;
+    padding: 16px 20px;
+}
+
+.news {
+    padding-top: 10px;
+
+    &__h1 {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 48px;
+        color: #6A737A;
+    }
+
+    &__menu {
+        padding-top: 16px;
+
+        .menu__list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &-item {
+                padding: 6px 12px;
+
+                &:not(:last-child) {
+                    margin-right: 4px;
+                }
+
+                &.active,
+                &:hover {
+                    background: #CB1C22;
+                    box-shadow: 0px 1px 4px rgba(10, 10, 10, 0.15);
+                    border-radius: 4px;
+
+                    .menu__list-link {
+                        color: #FFF;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            &-link {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: #6A737A;
+            }
+        }
+    }
+
+    &__section {
+        margin-top: 20px;
+
+        .col-8 {
+            max-width: 776px;
+        }
+
+        .col-4 {
+            margin-left: 24px;
+            flex: 1;
+        }
+
+        &-article {
+            margin-top: 16px;
+
+            .article__list {
+                display: flex;
+            }
+        }
+
+        &-highlight {
+
+            .highlight__top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 16px;
+
+                .highlight__tit {
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #32373D;
+                    display: inline-flex;
+                    align-items: center;
+
+                    &::after {
+                        content: '';
+                        display: inline-block;
+                        background: #E1E4E6;
+                        height: 1px;
+                        padding-right: 125px;
+                        margin: 0 12px;
+                    }
+                }
+
+                .highlight__link {
+                    display: inline-flex;
+                    align-items: center;
+                    cursor: pointer;
+
+                    span {
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 100%;
+                    }
+
+                    i {
+                        font-size: 16px;
+                        line-height: 1;
+                        margin-left: 4px;
+                    }
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        outline: none;
+                        text-decoration: none;
+                        color: #0664F9;
+                    }
+                }
+            }
+
+            .article__list-info {
+                margin-right: 12px;
+            }
+
+            .article__list-item {
+                display: flex;
+                margin: 0 0 16px 0;
+
+                img {
+                    max-width: 176px;
+                }
+
+                &:not(:last-child) {
+                    padding-bottom: 16px;
+                    border-bottom: 1px solid #E1E4E6;
+                }
+            }
+        }
+    }
+
+}
+
+// swiper button custom 
+.swiper {
+    overflow: hidden;
+    position: relative;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        background: #FFFFFF;
+        border: 1px solid #CBD1D6;
+        border-radius: 100px;
+        width: 40px;
+        height: 40px;
+
+        &::after {
+            font-size: 16px;
+            color: #444B52;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        width: 40px;
+        height: 4px;
+        border-radius: 100px;
+        background: rgba(255, 255, 255, 0.3);
+
+        &.swiper-pagination-bullet-active {
+            background: #FFF;
+        }
+    }
+
+    img {
+        border-radius: 8px;
+    }
+}
+
+.article__related,
+.product__related {
+    padding-bottom: 24px;
+}

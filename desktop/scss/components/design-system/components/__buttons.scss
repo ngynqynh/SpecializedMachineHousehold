@@ -1,0 +1,347 @@
+$btn-prop: (
+  "xl": (
+    padding: "0 32px",
+    height: "56px",
+    width: "56px",
+  ),
+  "lg": (
+    padding: "0 16px",
+    height: "36px",
+    width: "36px",
+  ),
+  "md": (
+    padding: "0 12px",
+    height: "32px",
+    width: "32px",
+  ),
+  "sm": (
+    padding: "0 12px",
+    height: "28px",
+    width: "28px",
+  ),
+  "xs": (
+    padding: "0 8px",
+    height: "24px",
+    width: "24px",
+  ),
+  "xxs": (
+    padding: "0 8px",
+    height: "20px",
+    width: "20px",
+  ),
+);
+
+$btn-font-size: (
+  "xl": 20px,
+  "lg": 16px,
+  "md": 16px,
+  "sm": 14px,
+  "xs": 14px,
+  "xxs": 12px,
+);
+$btn-icon-padding: (
+  "xl": (
+    padding-left: "32px",
+    padding-right: "20px",
+  ),
+  "lg": (
+    padding-left: "16px",
+    padding-right: "12px",
+  ),
+  "md": (
+    padding-left: "12px",
+    padding-right: "8px",
+  ),
+  "sm": (
+    padding-left: "12px",
+    padding-right: "8px",
+  ),
+  "xs": (
+    padding-left: "8px",
+    padding-right: "8px",
+  ),
+  "xxs": (
+    padding-left: "8px",
+    padding-right: "8px",
+  ),
+);
+$btn-icon-props: (
+  "xl": (
+    margin-icon: "12px",
+    font-size: "28px",
+  ),
+  "lg": (
+    margin-icon: "4px",
+    font-size: "20px",
+  ),
+  "md": (
+    margin-icon: "4px",
+    font-size: "16px",
+  ),
+  "sm": (
+    margin-icon: "4px",
+    font-size: "16px",
+  ),
+  "xs": (
+    margin-icon: "4px",
+    font-size: "14px",
+  ),
+  "xxs": (
+    margin-icon: "4px",
+    font-size: "12px",
+  ),
+);
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+  font-family: inherit;
+  border-radius: $border-radius;
+  padding: $spacing-base * 2 $spacing-base * 3;
+  transition: all $transition-duration-xs $timing-ease-end;
+  border: 1px solid transparent;
+  cursor: pointer;
+  span {
+    font-weight: inherit;
+  }
+  @each $size, $value in $btn-font-size {
+    &-#{$size} {
+      font-size: $value;
+      line-height: $value;
+    }
+  }
+  &-xl,
+  &-lg {
+    border-radius: $border-radius + 2;
+  }
+  &-rounded {
+    border-radius: 100px;
+  }
+  &-outline-grayscale {
+    color: $grayscale-600;
+  }
+}
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    color: $white;
+    background: $value;
+    outline: none;
+  }
+}
+@each $color, $value in $theme-colors-hover {
+  .btn-#{$color} {
+    &:hover {
+      background: $value;
+      border: 1px solid #{$value};
+    }
+  }
+}
+@each $color, $value in $theme-colors-focus {
+  .btn-#{$color} {
+    &:focus,
+    &:active {
+      outline: none;
+      background: $value;
+    }
+  }
+}
+@each $color, $value in $theme-colors-disable {
+  .btn-#{$color} {
+    &:disabled {
+      background: $value;
+      pointer-events: none;
+    }
+    &:active {
+      box-shadow: 0 0 0 0.1rem $value;
+    }
+  }
+}
+
+// Button padding & height
+@each $size, $detail in $btn-prop {
+  $padding: map-get($detail, "padding");
+  $height: map-get($detail, "height");
+  $keys: map-keys($detail); // padding, height,width (get keys of detail);
+  .btn-#{$size} {
+    padding: #{$padding};
+    height: #{$height};
+  }
+}
+@mixin btn-single($bool: false) {
+  @each $size, $detail in $btn-prop {
+    $width: map-get($detail, "width");
+    @if $bool {
+      &.btn-#{$size} {
+        width: #{$width};
+        padding: 0;
+      }
+    }
+  }
+}
+@mixin btn-icon($bool: false) {
+  @if $bool {
+    flex-direction: row;
+    .btn-inside {
+      display: flex;
+      flex-direction: column;
+    }
+
+    [class^="ic-"]:not(.btn-icon-search),
+    [class*=" ic-"]:not(.btn-icon-search) {
+      display: inline-block;
+      text-align: center;
+    }
+    @each $size, $detail in $btn-icon-props {
+      $font-size: map-get($detail, "font-size");
+      &.btn-#{$size} {
+        [class^="ic-"],
+        [class*=" ic-"] {
+          font-size: #{$font-size};
+          width: #{$font-size};
+        }
+      }
+    }
+  }
+}
+@mixin btn-icon-direction($direction: "") {
+  // each for all btn
+  // check icon on button posittion left or right
+  @each $size, $detail in $btn-icon-props {
+    $margin-icon: map-get($detail, "margin-icon");
+    @if $direction == "right" {
+      &.btn-#{$size} {
+        [class^="ic-"],
+        [class*=" ic-"] {
+          margin-left: #{$margin-icon};
+        }
+      }
+    } @else {
+      &.btn-#{$size} {
+        flex-direction: row-reverse;
+        [class^="ic-"],
+        [class*=" ic-"] {
+          margin-right: #{$margin-icon};
+        }
+      }
+    }
+  }
+  // set prop for search icon
+  @each $size, $detail in $btn-icon-padding {
+    $padding-left: map-get($detail, "padding-left");
+    $padding-right: map-get($detail, "padding-right");
+    @if $direction == right {
+      &.btn-#{$size} {
+        padding-left: #{$padding-left};
+        padding-right: #{$padding-right};
+      }
+    } @else {
+      &.btn-#{$size} {
+        padding-left: #{$padding-right};
+        padding-right: #{$padding-left};
+      }
+    }
+  }
+}
+
+// Button Outline
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    color: #{$value};
+    background: $white;
+    border: 1px solid #{$value};
+    &:hover {
+      color: $white;
+      background: #{$value};
+      border: 1px solid #{$value};
+    }
+  }
+}
+// custom
+.btn-outline-grayscale {
+  border: 1px solid #{$grayscale-400};
+}
+.btn-outline-grayscale {
+  color: $grayscale-600;
+}
+// Button Outline focus color
+@each $color, $value in $theme-colors-disable {
+  .btn-outline-#{$color} {
+    &:disabled {
+      background: $value;
+      pointer-events: none;
+    }
+    &:active,
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.1rem $value;
+    }
+  }
+}
+
+// Button number
+.btn-number {
+  @include btn-single($bool: true);
+}
+.btn-icon-single {
+  @include btn-single($bool: true);
+}
+
+// Button Icon
+.btn-icon {
+  @include btn-icon($bool: true);
+}
+.btn-icon-left {
+  @include btn-icon-direction("left");
+}
+.btn-icon-right {
+  @include btn-icon-direction("right");
+}
+
+// button Style
+.btn-square {
+  border-radius: 0;
+}
+
+.link {
+  color: $link;
+  position: relative;
+  display: inline-block;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    // bottom: -#{$spacing};
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $link;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: transform $transition-duration-xs $timing-ease-end,
+      -webkit-transform $transition-duration-xs $timing-ease-end;
+  }
+  &:hover,
+  &:focus {
+    color: $link;
+  }
+  &:hover:before {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  @each $size, $value in $btn-font-size {
+    &-#{$size} {
+      font-size: $value;
+      line-height: $value;
+    }
+  }
+  &-icon {
+    display: inline-flex;
+    align-items: center;
+    color: $link;
+  }
+}

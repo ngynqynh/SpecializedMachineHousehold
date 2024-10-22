@@ -1,0 +1,13 @@
+.e-label-pos {
+    position: absolute;
+    left: 3px;
+    bottom: 2px;
+  }
+
+  .form-check-input {
+    margin: 0;
+
+    &::after {
+      background: $white;
+    }
+  }

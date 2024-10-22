@@ -1,0 +1,27 @@
+.viewmore {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #444B52;
+    padding: 6px 12px 6px 16px;
+    background: #FFFFFF;
+    border: 1px solid #CBD1D6;
+    border-radius: 4px;
+
+    i {
+        font-size: 20px;
+        line-height: 1;
+        margin-left: 8px;
+        color: #939CA3;
+    }
+
+    &:hover,
+    &:focus,
+    :active {
+        outline: none;
+        text-decoration: none;
+        color: #444B52;
+    }
+}

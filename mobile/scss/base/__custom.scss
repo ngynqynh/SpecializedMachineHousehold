@@ -1,0 +1,367 @@
+.btn:disabled {
+  cursor: not-allowed;
+}
+.cs-price {
+  @extend .typo-text;
+  &--main {
+    color: $red-500;
+    font-weight: 500;
+  }
+  &--sub {
+    color: $text-sub;
+  }
+}
+// 12/11
+.cs-input {
+  border-radius: $border-radius;
+  border: $border;
+  background-color: $white;
+  color: $text-normal;
+  @include textType(14px, 20px);
+  padding: $padding-sm - 1 $padding;
+  transition: all 0.3s ease;
+  &:hover {
+    border: solid 1px $grayscale-500;
+  }
+  &:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  &::placeholder {
+    font-size: 14px;
+    color: $text-sub;
+  }
+  &-search,
+  &-clear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px;
+  }
+  &-search {
+    left: 8px;
+    &.icon-search {
+      font-size: 14px !important;
+      color: $grayscale-500;
+    }
+  }
+  &-clear {
+    right: 8px;
+    display: none;
+    color: #b8b8b8;
+    &::before {
+    }
+  }
+  &--lg {
+    padding: $padding-sm + 1 $padding;
+  }
+  &-size {
+    &--half {
+      flex: 1;
+    }
+    &--full {
+      width: 100%;
+    }
+  }
+  &.is-invalid {
+    border-color: $danger-500;
+    &:hover {
+      border-color: $danger-600;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem $danger-200;
+    }
+    & ~ .feedback {
+      flex-basis: 100%;
+      margin-top: $margin-sm;
+      .stack {
+        // border: solid 1px $danger-200;
+        // background-color: $danger-100;
+        color: $danger-700;
+        span {
+          color: $danger-500;
+        }
+      }
+    }
+  }
+  &.is-valid {
+    border-color: $success-500;
+    &:hover {
+      border-color: $success-600;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem $success-200;
+    }
+    & ~ .feedback {
+      flex-basis: 100%;
+      margin-top: $margin-sm;
+      .stack {
+        // border: solid 1px $success-200;
+        // background-color: $success-100;
+        color: $success-700;
+        span {
+          color: $success-500;
+        }
+      }
+    }
+  }
+}
+.is-invalid ~ div.feedback {
+  display: block;
+}
+.cs-input-group {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  &--search {
+    input {
+      padding-left: 28px;
+    }
+  }
+  .cs-btn {
+    margin-left: $margin;
+  }
+}
+
+.cs-textarea {
+  overflow: auto;
+  resize: vertical;
+}
+// input search && suggest
+.cs-suggest {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 4px);
+  width: max-content;
+  max-width: 490px;
+  max-height: 310px;
+  background-color: $white;
+  box-sizing: content-box;
+  border-radius: $border-radius;
+  border: $border;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translateY($margin-sm);
+  transition: all 0.3s ease;
+  @include scrollbar();
+  &__wrapper {
+    position: relative;
+  }
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: $padding;
+    transition: $transition;
+    cursor: pointer;
+    &:not(:last-child) {
+      box-shadow: $box-shadow;
+    }
+    &:hover {
+      background: $grayscale-100;
+    }
+    .img {
+      width: 50px;
+      height: 50px;
+      background: $white;
+      @include flexCenter();
+      padding: 0;
+      border: none;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      &--md {
+        width: 90px;
+        height: 60px;
+      }
+    }
+    .info {
+      flex: 1;
+    }
+  }
+}
+
+.cs-btn {
+  border: none;
+  @include textType(14px, 14px);
+  padding: $padding - 1 $padding-sm * 3;
+  &--lg {
+    padding: $padding + 1 $padding * 2;
+  }
+}
+
+.cs-toast {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  // padding: $padding-sm + 2 $padding-sm * 3;
+  // border-radius: $border-radius;
+  // border: $border;
+  color: $text-normal;
+  @include textType(14px, 14px);
+  span {
+    display: inline-block;
+    margin-right: $margin;
+    @include textType(14px, 20px);
+    &.icon-circle {
+      margin-top: 2px;
+      border-radius: 50%;
+    }
+  }
+  div {
+    flex: 1;
+    @include textType(inherit, inherit);
+    * {
+      @include textType(inherit, inherit);
+    }
+  }
+  &--warning,
+  &--danger {
+    span {
+      &.icon-circle {
+        color: $white;
+        @include flexCenter();
+        width: 16px;
+        height: 16px;
+        font-size: 80%;
+        &:before {
+          font-size: 100%;
+        }
+      }
+    }
+  }
+  &--success {
+    // border: solid 1px #c6f6d5;
+    // background-color: #f0fff4;
+    color: $success-700;
+    span {
+      color: $success-500;
+      &.icon-circle {
+        background-color: $success-500;
+      }
+    }
+  }
+  &--warning {
+    // border: solid 1px $warning-200;
+    // background-color: $warning-100;
+    color: $warning-700;
+    span {
+      color: $warning-500;
+      &.icon-circle {
+        background-color: $warning-500;
+      }
+    }
+  }
+}
+
+.was-validated {
+  flex-wrap: wrap;
+  align-self: baseline;
+  .radio,
+  .checkbox {
+    input:after {
+      border-color: $danger-500;
+    }
+  }
+  .feedback {
+    flex-basis: 100%;
+    margin-top: $margin;
+    .stack {
+      // border: solid 1px $danger-200;
+      // background-color: $danger-100;
+      color: $danger-700;
+      span {
+        color: $danger-500;
+      }
+    }
+  }
+}
+
+.cs-tag {
+  &s {
+    display: flex;
+    flex-wrap: wrap;
+    &--primary {
+      color: $red-500;
+    }
+  }
+  display: inline-flex;
+  align-items: center;
+  @include textType(16px, 16px);
+  border: 1px solid;
+  padding: $padding - 1 $padding-sm * 3;
+  border-radius: $border-radius * 25;
+  margin-right: $margin;
+  margin-bottom: $margin;
+  span {
+    display: inline-flex;
+    margin-left: $margin * 2;
+    cursor: pointer;
+  }
+}
+
+.card {
+  &-title {
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+}
+.radio,
+.checkbox {
+  input {
+    &:checked + label {
+      font-weight: 500;
+    }
+  }
+}
+// fix when apply icon design system
+// .icon-arrow-combo {
+// 	&:before {
+// 	  content: "\e927";
+// 	}
+//  }
+//  .icon-ok-circled {
+// 	display: inline-flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	margin-top: 3px !important;
+// 	width: 14px;
+// 	height: 14px;
+// 	border-radius: 50%;
+// 	background: $success-500;
+// 	&:before {
+// 	  font-size: 10px;
+// 	  color: white;
+// 	  content: "\e941";
+// 	}
+//  }
+//  .icon-check-new {
+// 	&:before {
+// 	  content: "\e941";
+// 	}
+//  }
+//  .icon-Combined-Shape {
+// 	&:before {
+// 	  content: "\e94b";
+// 	}
+//  }
+//  .icon-cancel{
+// 	&:before {
+// 		content: "\e948";
+// 	 }
+//  }
+
+.tooltip-dark .tooltip-box {
+  background: #939ca3;
+  color: #fff;
+}

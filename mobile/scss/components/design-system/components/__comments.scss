@@ -1,0 +1,194 @@
+.comment {
+   &-rating {
+      padding: 16px 0;
+      box-shadow: $box-shadow-100;
+      .list-star {
+         li {
+            line-height: 24px;
+            font-size: 21px;
+         }
+      }
+      &__submit {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 100%;
+      }
+   }
+   &-progress {
+      &__line {
+         display: flex;
+         align-items: center;
+         @include textType(14px, 20px);
+         &:not(:last-child) {
+            margin-bottom: 4px;
+         }
+      }
+      .progress {
+         height: 8px;
+         flex: 1;
+      }
+   }
+   &-feedbacks {
+      padding: 20px 20px 24px;
+   }
+   &-item {
+      &:not(:first-child) {
+         margin-top: 20px;
+      }
+      // custom
+      .avatar {
+         align-items: initial;
+         &-shape {
+            width: 76px;
+            height: 76px;
+            margin-right: 16px;
+         }
+         &-info {
+            flex: 1;
+            margin-left: 0;
+         }
+         &-time {
+            display: flex;
+         }
+         .list-star {
+            display: inline-flex;
+            li {
+               display: inline-flex;
+               align-items: center;
+            }
+         }
+      }
+      &.reply {
+         padding-left: 92px;
+         .avatar {
+            padding-left: 16px;
+            box-shadow: inset 4px 0px 0px $grayscale-400;
+         }
+      }
+      .link.active {
+         font-weight: 500;
+         &:before {
+            background: $success;
+         }
+         &,
+         .ic-color-link {
+            color: $success;
+         }
+         &:hover,
+         &:focus {
+            color: $success;
+         }
+      }
+   }
+   &-form {
+      padding: 16px 20px 0;
+      .form-group {
+         textarea {
+            height: 68px;
+         }
+         .btn {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+         }
+      }
+   }
+   &-modal {
+      .list-star {
+         li {
+            span {
+               font-size: 24px;
+            }
+         }
+      }
+   }
+   @include respond(mdm) {
+      &-rating {
+         padding: 16px 8px;
+         box-shadow: none;
+         .list-star {
+            li {
+               line-height: 20px;
+               font-size: 14px;
+            }
+         }
+         &__submit {
+            margin: 16px 0 0;
+            height: auto;
+         }
+      }
+      &-progress {
+         padding: 0 16px 0 12px;
+         &__line {
+            &:not(:last-child) {
+               margin-bottom: 0;
+            }
+         }
+         .progress {
+            height: 6px;
+         }
+      }
+      &-feedbacks {
+         padding: 0 8px;
+      }
+      &-item {
+         &:not(:first-child) {
+            margin-top: 16px;
+         }
+         &.reply {
+            padding-left: 12px;
+         }
+         .alert-single.alert-xs [class*="ic-"] {
+            margin-top: 2px;
+         }
+      }
+      &-form {
+         padding: 12px 8px;
+         margin-top: -8px;
+         background: $grayscale-100;
+         .form-group {
+            .btn {
+               position: relative;
+               right: unset;
+               top: unset;
+               transform: none;
+               margin-top: 8px;
+               width: 100%;
+            }
+         }
+      }
+      &-reviews {
+         .comment-feedbacks {
+            // padding-top: 16px;
+            #user-comment,
+            & > div:first-child {
+               margin-top: 16px;
+            }
+         }
+      }
+      &-modal {
+         .list-star {
+            li {
+               span {
+                  font-size: 21px;
+               }
+            }
+         }
+      }
+   }
+}
+.list-star {
+   display: flex; 
+   margin-bottom: 0;
+   li {
+      @include textType(14px, 20px);
+      &:not(:first-child) {
+         margin-left: 4px;
+      }
+      span {
+      }
+   }
+}

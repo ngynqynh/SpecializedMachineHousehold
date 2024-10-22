@@ -1,0 +1,34 @@
+
+@mixin spacing-loop($className, $styleName) {
+	@each $spacing in $spacings {
+		#{$className + $spacing} {
+			#{$styleName}: #{$spacing * 1px};
+		}
+	}
+}
+@include spacing-loop('.p-l-', 'padding-left');
+@include spacing-loop('.p-r-', 'padding-right');
+@include spacing-loop('.p-b-', 'padding-bottom');
+@include spacing-loop('.p-t-', 'padding-top');
+@include spacing-loop('.m-l-', 'margin-left');
+@include spacing-loop('.m-r-', 'margin-right');
+@include spacing-loop('.m-b-', 'margin-bottom');
+@include spacing-loop('.m-t-', 'margin-top');
+
+@mixin spacingXY-loop($className, $styleName, $direction1, $direction2) {
+	@each $spacing in $spacingsXY {
+		#{$className + $spacing} {
+			#{$styleName + '-'+ $direction1}: #{$spacing * 1px};
+			#{$styleName + '-'+ $direction2}: #{$spacing * 1px};
+		}
+	}
+}
+@include spacingXY-loop('.p-x-', 'padding', 'left', 'right');
+@include spacingXY-loop('.p-y-', 'padding', 'top', 'bottom');
+@include spacingXY-loop('.m-x-', 'margin', 'left', 'right');
+@include spacingXY-loop('.m-y-', 'margin', 'top', 'bottom');
+.m-x-auto{
+	margin-left: auto;
+	margin-right: auto;
+}
+

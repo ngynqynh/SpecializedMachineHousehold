@@ -1,0 +1,17 @@
+@keyframes progress {
+	from {
+		left: -100%;
+	}
+	to {
+		left: 0;
+	}
+}
+@-webkit-keyframes progress {
+	from {
+		left: -100%;
+	}
+	to {
+		left: 0;
+	}
+}
+  

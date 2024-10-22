@@ -1,0 +1,186 @@
+.c-comment {
+	padding: 20px 20px 16px;
+	position: relative;
+	background: $white;
+	width: 100%;
+	$this: &;
+	&-box {
+		display: flex;
+		margin-bottom: 17px;
+		&__avatar {
+			flex-basis: 70px;
+			height: 70px;
+			margin-right: 15px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			@extend .typo-title;
+			border-radius: 4px;
+			background: $gray-400;
+			color: $white;
+			// img {
+			// 	border-radius: 4px;
+			// }
+		}
+		&__content {
+			flex: 1;
+			.list-star ul li:not(:last-child) {
+				margin-right: 4.5px;
+			}
+		}
+		&.level2 {
+			padding-left: 85px;
+			#{$this}-box__avatar {
+				display: none;
+			}
+			#{$this}-box__content {
+				padding-left: $padding * 2;
+				margin-left: $margin * 2;
+				position: relative;
+				box-shadow: inset 5px 0 0 0 #dee2e6;
+				background-color: rgba(0, 0, 0, 0);
+				.list-star {
+					display: none;
+				}
+			}
+			& + .row {
+				padding-left: 85px;
+				margin-bottom: $margin * 2;
+				.f-err {
+					@include textType(14px, 20px);
+					text-align: center;
+					color: $danger-600;
+					margin-top: $margin;
+				}
+			}
+		}
+	}
+	&-name {
+		@extend .typo-into-elevated;
+		margin-right: 5px;
+		font-weight: 500;
+		color: $gray-900;
+		display: flex;
+		align-items: center;
+		.tick {
+			@extend .typo-text;
+			color: $success;
+			position: relative;
+			display: inline-block;
+			padding-left: 20px;
+			margin-left: $margin-sm;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 3px;
+				transform: translateY(-50%);
+				width: 13px;
+				height: 13px;
+				background: url('../images/tick.png');
+				background-size: cover;
+				display: inline-block;
+			}
+		}
+		.badge {
+			// position: relative;
+			// top: -3px;
+			// left: 5px;
+			margin-left: $margin-sm;
+		}
+		.time {
+			font-size: 14px;
+			line-height: 14px;
+			color: $gray;
+			font-weight: 300;
+			display: inline-block;
+			margin-left: $margin-sm;
+		}
+	}
+	.list-star {
+		margin-bottom: 4px;
+		justify-content: start;
+		ul {
+			span {
+				font-weight: 300;
+				font-size: 14px;
+				line-height: 20px;
+				color: $gray;
+				margin-left: $margin-sm;
+			}
+		}
+	}
+	&-text {
+		color: $grayscale-700;
+		font-weight: normal;
+		@extend .typo-text--large;
+		margin-top: 4px;
+		p {
+			font-size: inherit;
+			line-height: inherit;
+			font-weight: inherit;
+			margin-bottom: 0;
+		}
+	} 
+	&-status {
+		margin-top: 4px;
+		a {
+			@extend .typo-text;
+			i {
+				&:before {
+					margin: 0;
+				}
+			}
+			&.active {
+				color: #33b530;
+			}
+		}
+		span {
+			color: #ccc;
+			margin: 0 5px;
+		}
+	}
+	&-pagination {
+		.pagination {
+			justify-content: center;
+			&-item {
+				display: inline-flex;
+			}
+		}
+		.pagination-link {
+			i {
+				left: unset;
+			}
+		}
+	}
+	&-loadMore {
+		text-align: center;
+		a {
+			display: inline-block;
+			border: solid 1px #7987a1;
+			background-color: #fff;
+			padding: 7px 24px 7px 12px;
+			border-radius: 4px;
+			@extend .typo-text;
+			color: #495057;
+			cursor: pointer;
+			position: relative;
+			.carret {
+				width: 0px;
+				height: 0px;
+				border-left: 4px solid transparent;
+				border-right: 4px solid transparent;
+				border-top: 8px solid #6c757d;
+				display: inline-block;
+				vertical-align: middle;
+				position: absolute;
+				top: 50%;
+				right: 8px;
+				transform: translateY(-50%);
+			}
+			&:hover {
+				background: $gray-100;
+			}
+		}
+	}
+}

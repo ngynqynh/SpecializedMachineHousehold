@@ -1,0 +1,25 @@
+.c-pv {
+	&s {
+		&--column {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+	& {
+		width: calc(100% / 2);
+		margin-bottom: 16px;
+		padding: 0 10px;
+	}
+	&__img {
+		margin-bottom: 8px;
+		// width: 200px;
+		// height: 132px;
+		@include flexCenter();
+	}
+	&__name {
+		@include textType(14px, 20px, normal);
+		@include setLine(2);
+		margin-bottom: 4px;
+		color: $gray-700;
+	}
+}

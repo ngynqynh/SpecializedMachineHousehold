@@ -1,0 +1,51 @@
+// bagde
+.stack {
+	display: inline-flex;
+	align-items: start;
+	position: relative;
+	z-index: 1;
+	// padding: $padding-sm + 1 $padding-sm * 3;
+	// border-radius: $border-radius;
+	// border: $border;
+	color: $text-normal;
+	@include textType(14px, 20px);
+	span {
+		display: inline-block;
+		margin-right: $margin-sm;
+		@include textType(14px, 20px);
+	}
+	div,p{
+		align-self: center;
+		@include textType(14px, 20px); 
+		margin-bottom: 0;
+		color: inherit;
+	}
+			
+	strong{
+		font-weight: 500; 
+	}
+	&--success {
+		// border: solid 1px $success-200;
+		// background-color: $success-100;
+		color: $success-700; 
+		span {
+			color: $success-500;
+		}
+	}
+	&--danger {
+		// border: solid 1px $danger-200;
+		// background-color: $danger-100;
+		color: $danger-700;
+		span {
+			color: $danger-500;
+		}
+	}
+	&--warning {
+		// border: solid 1px $warning-200;
+		// background-color: $warning-100;
+		color: $warning-700; 
+		span {
+			color: $warning-500;
+		}
+	}	
+}
